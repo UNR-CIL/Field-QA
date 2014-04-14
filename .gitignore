@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Xcode
 #
 build/
@@ -16,6 +17,7 @@ DerivedData
 *.hmap
 *.ipa
 
+=======
 # CocoaPods
 #
 # We recommend against adding the Pods directory to your .gitignore. However
