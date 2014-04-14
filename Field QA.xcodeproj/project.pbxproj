@@ -19,7 +19,6 @@
 		AB4CFED018F5D3470052F590 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB4CFECE18F5D3470052F590 /* Main_iPad.storyboard */; };
 		AB4CFED318F5D3470052F590 /* Field_QA.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB4CFED118F5D3470052F590 /* Field_QA.xcdatamodeld */; };
 		AB4CFED618F5D3470052F590 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4CFED518F5D3470052F590 /* MasterViewController.m */; };
-		AB4CFED918F5D3470052F590 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4CFED818F5D3470052F590 /* DetailViewController.m */; };
 		AB4CFEDB18F5D3470052F590 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB4CFEDA18F5D3470052F590 /* Images.xcassets */; };
 		AB4CFEE218F5D3470052F590 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4CFEE118F5D3470052F590 /* XCTest.framework */; };
 		AB4CFEE318F5D3470052F590 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4CFEB718F5D3470052F590 /* Foundation.framework */; };
@@ -28,6 +27,9 @@
 		AB4CFEED18F5D3470052F590 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB4CFEEB18F5D3470052F590 /* InfoPlist.strings */; };
 		AB4CFEEF18F5D3470052F590 /* Field_QATests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4CFEEE18F5D3470052F590 /* Field_QATests.m */; };
 		ABC6FB5018FC60B4001E6420 /* ImageToDataTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC6FB4F18FC60B4001E6420 /* ImageToDataTransformer.m */; };
+		ABC6FB5318FC7563001E6420 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC6FB5218FC7563001E6420 /* DetailViewController.m */; };
+		ABC6FB5C18FC7A9F001E6420 /* TextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC6FB5B18FC7A9F001E6420 /* TextFieldTableViewCell.m */; };
+		ABC6FB5E18FC7ABD001E6420 /* TextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABC6FB5D18FC7ABD001E6420 /* TextFieldTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,8 +60,6 @@
 		AB4CFED218F5D3470052F590 /* Field_QA.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Field_QA.xcdatamodel; sourceTree = "<group>"; };
 		AB4CFED418F5D3470052F590 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		AB4CFED518F5D3470052F590 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		AB4CFED718F5D3470052F590 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		AB4CFED818F5D3470052F590 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		AB4CFEDA18F5D3470052F590 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AB4CFEE018F5D3470052F590 /* Field QATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Field QATests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB4CFEE118F5D3470052F590 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -68,6 +68,11 @@
 		AB4CFEEE18F5D3470052F590 /* Field_QATests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Field_QATests.m; sourceTree = "<group>"; };
 		ABC6FB4E18FC60B4001E6420 /* ImageToDataTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageToDataTransformer.h; sourceTree = "<group>"; };
 		ABC6FB4F18FC60B4001E6420 /* ImageToDataTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageToDataTransformer.m; sourceTree = "<group>"; };
+		ABC6FB5118FC7563001E6420 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		ABC6FB5218FC7563001E6420 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		ABC6FB5A18FC7A9F001E6420 /* TextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldTableViewCell.h; sourceTree = "<group>"; };
+		ABC6FB5B18FC7A9F001E6420 /* TextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldTableViewCell.m; sourceTree = "<group>"; };
+		ABC6FB5D18FC7ABD001E6420 /* TextFieldTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldTableViewCell.xib; sourceTree = "<group>"; };
 		C4CA2515C78B486D9570576B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -134,14 +139,17 @@
 		AB4CFEBF18F5D3470052F590 /* Field QA */ = {
 			isa = PBXGroup;
 			children = (
+				ABC6FB5A18FC7A9F001E6420 /* TextFieldTableViewCell.h */,
+				ABC6FB5B18FC7A9F001E6420 /* TextFieldTableViewCell.m */,
+				ABC6FB5D18FC7ABD001E6420 /* TextFieldTableViewCell.xib */,
 				AB4CFEC818F5D3470052F590 /* AppDelegate.h */,
 				AB4CFEC918F5D3470052F590 /* AppDelegate.m */,
 				AB4CFECB18F5D3470052F590 /* Main_iPhone.storyboard */,
 				AB4CFECE18F5D3470052F590 /* Main_iPad.storyboard */,
 				AB4CFED418F5D3470052F590 /* MasterViewController.h */,
 				AB4CFED518F5D3470052F590 /* MasterViewController.m */,
-				AB4CFED718F5D3470052F590 /* DetailViewController.h */,
-				AB4CFED818F5D3470052F590 /* DetailViewController.m */,
+				ABC6FB5118FC7563001E6420 /* DetailViewController.h */,
+				ABC6FB5218FC7563001E6420 /* DetailViewController.m */,
 				ABC6FB4E18FC60B4001E6420 /* ImageToDataTransformer.h */,
 				ABC6FB4F18FC60B4001E6420 /* ImageToDataTransformer.m */,
 				AB4CFEDA18F5D3470052F590 /* Images.xcassets */,
@@ -263,6 +271,7 @@
 			files = (
 				AB4CFED018F5D3470052F590 /* Main_iPad.storyboard in Resources */,
 				AB4CFEDB18F5D3470052F590 /* Images.xcassets in Resources */,
+				ABC6FB5E18FC7ABD001E6420 /* TextFieldTableViewCell.xib in Resources */,
 				AB4CFECD18F5D3470052F590 /* Main_iPhone.storyboard in Resources */,
 				AB4CFEC418F5D3470052F590 /* InfoPlist.strings in Resources */,
 			);
@@ -316,12 +325,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB4CFED918F5D3470052F590 /* DetailViewController.m in Sources */,
+				ABC6FB5C18FC7A9F001E6420 /* TextFieldTableViewCell.m in Sources */,
 				AB4CFED618F5D3470052F590 /* MasterViewController.m in Sources */,
 				AB4CFED318F5D3470052F590 /* Field_QA.xcdatamodeld in Sources */,
 				AB4CFECA18F5D3470052F590 /* AppDelegate.m in Sources */,
 				ABC6FB5018FC60B4001E6420 /* ImageToDataTransformer.m in Sources */,
 				AB4CFEC618F5D3470052F590 /* main.m in Sources */,
+				ABC6FB5318FC7563001E6420 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
