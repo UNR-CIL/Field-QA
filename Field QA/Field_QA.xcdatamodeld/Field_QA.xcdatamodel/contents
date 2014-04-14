@@ -1,9 +1,93 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Event">
-        <attribute name="timeStamp" optional="YES" attributeType="Date"/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13C64" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Component" syncable="YES">
+        <attribute name="active" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="creationDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="height" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="installationDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="locationNotes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="model" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="serialNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uniqueIdentifier" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="creator" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="components" inverseEntity="Person" syncable="YES"/>
+        <relationship name="currentLogicalDevice" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LogicalDevice" inverseName="currentComponent" inverseEntity="LogicalDevice" syncable="YES"/>
+        <relationship name="logicalDevice" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LogicalDevice" inverseName="components" inverseEntity="LogicalDevice" syncable="YES"/>
+        <relationship name="serviceEntries" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ServiceEntry" inverseName="components" inverseEntity="ServiceEntry" syncable="YES"/>
+    </entity>
+    <entity name="Deployment" syncable="YES">
+        <attribute name="creationDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="creator" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="createdDeployments" inverseEntity="Person" syncable="YES"/>
+        <relationship name="project" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Project" inverseName="deployments" inverseEntity="Project" syncable="YES"/>
+        <relationship name="serviceEntries" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ServiceEntry" inverseName="deployments" inverseEntity="ServiceEntry" syncable="YES"/>
+        <relationship name="systems" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="System" inverseName="deployment" inverseEntity="System" syncable="YES"/>
+        <relationship name="users" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="managedDeployments" inverseEntity="Person" syncable="YES"/>
+    </entity>
+    <entity name="LogicalDevice" syncable="YES">
+        <attribute name="creationDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="components" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Component" inverseName="logicalDevice" inverseEntity="Component" syncable="YES"/>
+        <relationship name="currentComponent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Component" inverseName="currentLogicalDevice" inverseEntity="Component" syncable="YES"/>
+        <relationship name="system" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="System" inverseName="logicalDevice" inverseEntity="System" syncable="YES"/>
+    </entity>
+    <entity name="Person">
+        <attribute name="email" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="components" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Component" inverseName="creator" inverseEntity="Component" syncable="YES"/>
+        <relationship name="createdDeployments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Deployment" inverseName="creator" inverseEntity="Deployment" syncable="YES"/>
+        <relationship name="managedDeployments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Deployment" inverseName="users" inverseEntity="Deployment" syncable="YES"/>
+        <relationship name="projects" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Project" inverseName="contacts" inverseEntity="Project" syncable="YES"/>
+        <relationship name="serviceEntries" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ServiceEntry" inverseName="users" inverseEntity="ServiceEntry" syncable="YES"/>
+        <relationship name="serviceEntriesCreated" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ServiceEntry" inverseName="creator" inverseEntity="ServiceEntry" syncable="YES"/>
+        <relationship name="systems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="System" inverseName="creator" inverseEntity="System" syncable="YES"/>
+        <userInfo/>
+    </entity>
+    <entity name="Project" syncable="YES">
+        <attribute name="creationDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="contacts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Person" inverseName="projects" inverseEntity="Person" syncable="YES"/>
+        <relationship name="deployments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Deployment" inverseName="project" inverseEntity="Deployment" syncable="YES"/>
+    </entity>
+    <entity name="ServiceEntry" syncable="YES">
+        <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="creationDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="modificationDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photo" optional="YES" attributeType="Transformable" valueTransformerName="ImageToDataTransformer" syncable="YES"/>
+        <relationship name="components" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Component" inverseName="serviceEntries" inverseEntity="Component" syncable="YES"/>
+        <relationship name="creator" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="serviceEntriesCreated" inverseEntity="Person" syncable="YES"/>
+        <relationship name="deployments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Deployment" inverseName="serviceEntries" inverseEntity="Deployment" syncable="YES"/>
+        <relationship name="systems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="System" inverseName="serviceEntries" inverseEntity="System" syncable="YES"/>
+        <relationship name="users" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Person" inverseName="serviceEntries" inverseEntity="Person" syncable="YES"/>
+    </entity>
+    <entity name="System" syncable="YES">
+        <attribute name="creationDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="creator" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="systems" inverseEntity="Person" syncable="YES"/>
+        <relationship name="deployment" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deployment" inverseName="systems" inverseEntity="Deployment" syncable="YES"/>
+        <relationship name="logicalDevice" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LogicalDevice" inverseName="system" inverseEntity="LogicalDevice" syncable="YES"/>
+        <relationship name="serviceEntries" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ServiceEntry" inverseName="systems" inverseEntity="ServiceEntry" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="261" positionY="189" width="128" height="60"/>
+        <element name="Component" positionX="693" positionY="306" width="128" height="253"/>
+        <element name="Deployment" positionX="61" positionY="261" width="128" height="193"/>
+        <element name="LogicalDevice" positionX="457" positionY="198" width="128" height="133"/>
+        <element name="Person" positionX="43" positionY="-90" width="128" height="208"/>
+        <element name="Project" positionX="-164" positionY="203" width="128" height="118"/>
+        <element name="ServiceEntry" positionX="367" positionY="-90" width="128" height="195"/>
+        <element name="System" positionX="279" positionY="189" width="128" height="163"/>
     </elements>
 </model>
