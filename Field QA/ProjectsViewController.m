@@ -1,18 +1,18 @@
 //
-//  DetailViewController.m
+//  ProjectsViewController.m
 //  Field QA
 //
-//  Created by John Jusayan on 4/14/14.
+//  Created by John Jusayan on 4/16/14.
 //  Copyright (c) 2014 CSE UNR. All rights reserved.
 //
 
-#import "DetailViewController.h"
+#import "ProjectsViewController.h"
 
-@interface DetailViewController ()
+@interface ProjectsViewController ()
 
 @end
 
-@implementation DetailViewController
+@implementation ProjectsViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {

@@ -32,7 +32,7 @@
         <attribute name="creationDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="components" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Component" inverseName="logicalDevice" inverseEntity="Component" syncable="YES"/>
+        <relationship name="components" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Component" inverseName="logicalDevice" inverseEntity="Component" syncable="YES"/>
         <relationship name="currentComponent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Component" inverseName="currentLogicalDevice" inverseEntity="Component" syncable="YES"/>
         <relationship name="system" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="System" inverseName="logicalDevice" inverseEntity="System" syncable="YES"/>
     </entity>
@@ -87,7 +87,7 @@
         <element name="LogicalDevice" positionX="457" positionY="198" width="128" height="133"/>
         <element name="Person" positionX="43" positionY="-90" width="128" height="208"/>
         <element name="Project" positionX="-164" positionY="203" width="128" height="118"/>
-        <element name="ServiceEntry" positionX="367" positionY="-90" width="128" height="195"/>
+        <element name="ServiceEntry" positionX="351" positionY="-207" width="128" height="195"/>
         <element name="System" positionX="279" positionY="189" width="128" height="163"/>
     </elements>
 </model>
