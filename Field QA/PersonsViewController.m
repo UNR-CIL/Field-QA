@@ -10,6 +10,8 @@
 
 @interface PersonsViewController ()
 
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
 @end
 
 @implementation PersonsViewController

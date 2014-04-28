@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13C64" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Component" syncable="YES">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13C1021" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Component" representedClassName="Component" syncable="YES">
         <attribute name="active" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="creationDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="height" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
@@ -16,7 +16,7 @@
         <relationship name="logicalDevice" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LogicalDevice" inverseName="components" inverseEntity="LogicalDevice" syncable="YES"/>
         <relationship name="serviceEntries" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ServiceEntry" inverseName="components" inverseEntity="ServiceEntry" syncable="YES"/>
     </entity>
-    <entity name="Deployment" syncable="YES">
+    <entity name="Deployment" representedClassName="Deployment" syncable="YES">
         <attribute name="creationDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
@@ -28,7 +28,7 @@
         <relationship name="systems" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="System" inverseName="deployment" inverseEntity="System" syncable="YES"/>
         <relationship name="users" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="managedDeployments" inverseEntity="Person" syncable="YES"/>
     </entity>
-    <entity name="LogicalDevice" syncable="YES">
+    <entity name="LogicalDevice" representedClassName="LogicalDevice" syncable="YES">
         <attribute name="creationDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
@@ -36,7 +36,7 @@
         <relationship name="currentComponent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Component" inverseName="currentLogicalDevice" inverseEntity="Component" syncable="YES"/>
         <relationship name="system" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="System" inverseName="logicalDevice" inverseEntity="System" syncable="YES"/>
     </entity>
-    <entity name="Person">
+    <entity name="Person" representedClassName="Person">
         <attribute name="email" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="firstName" optional="YES" attributeType="String">
             <userInfo/>
@@ -52,14 +52,14 @@
         <relationship name="systems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="System" inverseName="creator" inverseEntity="System" syncable="YES"/>
         <userInfo/>
     </entity>
-    <entity name="Project" syncable="YES">
+    <entity name="Project" representedClassName="Project" syncable="YES">
         <attribute name="creationDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="contacts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Person" inverseName="projects" inverseEntity="Person" syncable="YES"/>
         <relationship name="deployments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Deployment" inverseName="project" inverseEntity="Deployment" syncable="YES"/>
     </entity>
-    <entity name="ServiceEntry" syncable="YES">
+    <entity name="ServiceEntry" representedClassName="ServiceEntry" syncable="YES">
         <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="creationDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="modificationDate" optional="YES" attributeType="Date" syncable="YES"/>
@@ -71,7 +71,7 @@
         <relationship name="systems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="System" inverseName="serviceEntries" inverseEntity="System" syncable="YES"/>
         <relationship name="users" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Person" inverseName="serviceEntries" inverseEntity="Person" syncable="YES"/>
     </entity>
-    <entity name="System" syncable="YES">
+    <entity name="System" representedClassName="System" syncable="YES">
         <attribute name="creationDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>

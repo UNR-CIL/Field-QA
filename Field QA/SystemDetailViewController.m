@@ -10,6 +10,8 @@
 
 @interface SystemDetailViewController ()
 
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
 @end
 
 @implementation SystemDetailViewController

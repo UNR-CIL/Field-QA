@@ -10,6 +10,8 @@
 
 @interface DeploymentDetailViewController ()
 
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
 @end
 
 @implementation DeploymentDetailViewController

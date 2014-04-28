@@ -10,6 +10,8 @@
 
 @interface DeploymentsViewController ()
 
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
 @end
 
 @implementation DeploymentsViewController

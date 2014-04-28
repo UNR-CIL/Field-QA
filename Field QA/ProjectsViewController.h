@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TNDataController.h"
 
-@interface ProjectsViewController : UITableViewController
+@interface ProjectsViewController : UITableViewController <TNCollectionCellConfiguration>
 
 @end

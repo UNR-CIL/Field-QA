@@ -10,6 +10,8 @@
 
 @interface SystemsViewController ()
 
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
 @end
 
 @implementation SystemsViewController

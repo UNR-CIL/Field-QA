@@ -7,8 +7,11 @@
 //
 
 #import "ProjectDetailViewController.h"
+#import "Project.h"
 
 @interface ProjectDetailViewController ()
+
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end
 

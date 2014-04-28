@@ -25,6 +25,14 @@
 		AB4CFEE518F5D3470052F590 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4CFEBD18F5D3470052F590 /* CoreData.framework */; };
 		AB4CFEED18F5D3470052F590 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB4CFEEB18F5D3470052F590 /* InfoPlist.strings */; };
 		AB4CFEEF18F5D3470052F590 /* Field_QATests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4CFEEE18F5D3470052F590 /* Field_QATests.m */; };
+		AB701241190EF28E00A8E08C /* TNDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB701240190EF28E00A8E08C /* TNDataController.m */; };
+		AB701245190F0B2A00A8E08C /* Component.m in Sources */ = {isa = PBXBuildFile; fileRef = AB701244190F0B2A00A8E08C /* Component.m */; };
+		AB701248190F0B2B00A8E08C /* ServiceEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = AB701247190F0B2B00A8E08C /* ServiceEntry.m */; };
+		AB70124B190F0B2B00A8E08C /* LogicalDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = AB70124A190F0B2B00A8E08C /* LogicalDevice.m */; };
+		AB70124E190F0B2B00A8E08C /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = AB70124D190F0B2B00A8E08C /* Person.m */; };
+		AB701251190F0B2B00A8E08C /* System.m in Sources */ = {isa = PBXBuildFile; fileRef = AB701250190F0B2B00A8E08C /* System.m */; };
+		AB701254190F0B2B00A8E08C /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = AB701253190F0B2B00A8E08C /* Project.m */; };
+		AB701257190F0B2B00A8E08C /* Deployment.m in Sources */ = {isa = PBXBuildFile; fileRef = AB701256190F0B2B00A8E08C /* Deployment.m */; };
 		AB8DDFED18FF0B1D005A1093 /* ProjectsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8DDFEC18FF0B1D005A1093 /* ProjectsViewController.m */; };
 		AB8DDFF018FF0B32005A1093 /* ProjectDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8DDFEF18FF0B32005A1093 /* ProjectDetailViewController.m */; };
 		AB8DDFF318FF0B46005A1093 /* DeploymentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8DDFF218FF0B46005A1093 /* DeploymentsViewController.m */; };
@@ -74,6 +82,22 @@
 		AB4CFEEA18F5D3470052F590 /* Field QATests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Field QATests-Info.plist"; sourceTree = "<group>"; };
 		AB4CFEEC18F5D3470052F590 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AB4CFEEE18F5D3470052F590 /* Field_QATests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Field_QATests.m; sourceTree = "<group>"; };
+		AB70123F190EF28E00A8E08C /* TNDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNDataController.h; sourceTree = "<group>"; };
+		AB701240190EF28E00A8E08C /* TNDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNDataController.m; sourceTree = "<group>"; };
+		AB701243190F0B2A00A8E08C /* Component.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Component.h; sourceTree = "<group>"; };
+		AB701244190F0B2A00A8E08C /* Component.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Component.m; sourceTree = "<group>"; };
+		AB701246190F0B2B00A8E08C /* ServiceEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceEntry.h; sourceTree = "<group>"; };
+		AB701247190F0B2B00A8E08C /* ServiceEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceEntry.m; sourceTree = "<group>"; };
+		AB701249190F0B2B00A8E08C /* LogicalDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogicalDevice.h; sourceTree = "<group>"; };
+		AB70124A190F0B2B00A8E08C /* LogicalDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogicalDevice.m; sourceTree = "<group>"; };
+		AB70124C190F0B2B00A8E08C /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		AB70124D190F0B2B00A8E08C /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		AB70124F190F0B2B00A8E08C /* System.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = System.h; sourceTree = "<group>"; };
+		AB701250190F0B2B00A8E08C /* System.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = System.m; sourceTree = "<group>"; };
+		AB701252190F0B2B00A8E08C /* Project.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Project.h; sourceTree = "<group>"; };
+		AB701253190F0B2B00A8E08C /* Project.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Project.m; sourceTree = "<group>"; };
+		AB701255190F0B2B00A8E08C /* Deployment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deployment.h; sourceTree = "<group>"; };
+		AB701256190F0B2B00A8E08C /* Deployment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Deployment.m; sourceTree = "<group>"; };
 		AB8DDFEB18FF0B1D005A1093 /* ProjectsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectsViewController.h; sourceTree = "<group>"; };
 		AB8DDFEC18FF0B1D005A1093 /* ProjectsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectsViewController.m; sourceTree = "<group>"; };
 		AB8DDFEE18FF0B32005A1093 /* ProjectDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectDetailViewController.h; sourceTree = "<group>"; };
@@ -179,7 +203,7 @@
 				AB8DDFF518FF0B56005A1093 /* DeploymentDetailViewController.m */,
 				AB8DDFF118FF0B46005A1093 /* DeploymentsViewController.h */,
 				AB8DDFF218FF0B46005A1093 /* DeploymentsViewController.m */,
-				AB4CFED118F5D3470052F590 /* Field_QA.xcdatamodeld */,
+				AB701242190F0B1200A8E08C /* Model */,
 				AB4CFEDA18F5D3470052F590 /* Images.xcassets */,
 				ABC6FB4E18FC60B4001E6420 /* ImageToDataTransformer.h */,
 				ABC6FB4F18FC60B4001E6420 /* ImageToDataTransformer.m */,
@@ -205,6 +229,8 @@
 				ABC6FB5A18FC7A9F001E6420 /* TextFieldTableViewCell.h */,
 				ABC6FB5B18FC7A9F001E6420 /* TextFieldTableViewCell.m */,
 				ABC6FB5D18FC7ABD001E6420 /* TextFieldTableViewCell.xib */,
+				AB70123F190EF28E00A8E08C /* TNDataController.h */,
+				AB701240190EF28E00A8E08C /* TNDataController.m */,
 			);
 			path = "Field QA";
 			sourceTree = "<group>";
@@ -236,6 +262,28 @@
 				AB4CFEEB18F5D3470052F590 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AB701242190F0B1200A8E08C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AB701255190F0B2B00A8E08C /* Deployment.h */,
+				AB701256190F0B2B00A8E08C /* Deployment.m */,
+				AB701252190F0B2B00A8E08C /* Project.h */,
+				AB701253190F0B2B00A8E08C /* Project.m */,
+				AB70124F190F0B2B00A8E08C /* System.h */,
+				AB701250190F0B2B00A8E08C /* System.m */,
+				AB70124C190F0B2B00A8E08C /* Person.h */,
+				AB70124D190F0B2B00A8E08C /* Person.m */,
+				AB701249190F0B2B00A8E08C /* LogicalDevice.h */,
+				AB70124A190F0B2B00A8E08C /* LogicalDevice.m */,
+				AB701246190F0B2B00A8E08C /* ServiceEntry.h */,
+				AB701247190F0B2B00A8E08C /* ServiceEntry.m */,
+				AB701243190F0B2A00A8E08C /* Component.h */,
+				AB701244190F0B2A00A8E08C /* Component.m */,
+				AB4CFED118F5D3470052F590 /* Field_QA.xcdatamodeld */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -375,6 +423,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB701257190F0B2B00A8E08C /* Deployment.m in Sources */,
+				AB701248190F0B2B00A8E08C /* ServiceEntry.m in Sources */,
+				AB701245190F0B2A00A8E08C /* Component.m in Sources */,
+				AB70124E190F0B2B00A8E08C /* Person.m in Sources */,
+				AB701254190F0B2B00A8E08C /* Project.m in Sources */,
 				AB8DDFF618FF0B56005A1093 /* DeploymentDetailViewController.m in Sources */,
 				ABC6FB5C18FC7A9F001E6420 /* TextFieldTableViewCell.m in Sources */,
 				AB8DE00818FF0EA4005A1093 /* ServiceEntryDetailViewController.m in Sources */,
@@ -384,6 +437,9 @@
 				AB8DE00218FF0E60005A1093 /* ComponentDetailViewController.m in Sources */,
 				AB4CFECA18F5D3470052F590 /* AppDelegate.m in Sources */,
 				ABC6FB5018FC60B4001E6420 /* ImageToDataTransformer.m in Sources */,
+				AB70124B190F0B2B00A8E08C /* LogicalDevice.m in Sources */,
+				AB701241190EF28E00A8E08C /* TNDataController.m in Sources */,
+				AB701251190F0B2B00A8E08C /* System.m in Sources */,
 				AB8DDFED18FF0B1D005A1093 /* ProjectsViewController.m in Sources */,
 				AB8DE00518FF0E92005A1093 /* ServiceEntriesViewController.m in Sources */,
 				AB8DE00B18FF0EDE005A1093 /* PersonsViewController.m in Sources */,

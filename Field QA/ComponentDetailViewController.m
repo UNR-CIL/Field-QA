@@ -10,6 +10,8 @@
 
 @interface ComponentDetailViewController ()
 
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
 @end
 
 @implementation ComponentDetailViewController

@@ -14,20 +14,20 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s4R-pX-UZX">
-                        <rect key="frame" x="20" y="11" width="92" height="21"/>
+                        <rect key="frame" x="8" y="11" width="120" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="92" id="PWW-cN-Y2p"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="PWW-cN-Y2p"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V3Y-hE-PX3">
-                        <rect key="frame" x="136" y="7" width="164" height="30"/>
+                        <rect key="frame" x="136" y="7" width="177" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="164" id="en0-59-gVj"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="177" id="en0-59-gVj"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
@@ -36,9 +36,9 @@
                 <constraints>
                     <constraint firstItem="s4R-pX-UZX" firstAttribute="top" secondItem="nho-V3-QKP" secondAttribute="top" constant="11" id="87S-Ge-1xp"/>
                     <constraint firstItem="V3Y-hE-PX3" firstAttribute="top" secondItem="nho-V3-QKP" secondAttribute="top" constant="7" id="BY5-Qr-cBV"/>
-                    <constraint firstItem="s4R-pX-UZX" firstAttribute="leading" secondItem="nho-V3-QKP" secondAttribute="leading" constant="20" id="Olz-fF-zbH"/>
-                    <constraint firstAttribute="trailing" secondItem="V3Y-hE-PX3" secondAttribute="trailing" constant="20" id="ljc-I6-vIC"/>
-                    <constraint firstItem="V3Y-hE-PX3" firstAttribute="leading" secondItem="s4R-pX-UZX" secondAttribute="trailing" constant="24" id="pLV-TO-mH8"/>
+                    <constraint firstItem="s4R-pX-UZX" firstAttribute="leading" secondItem="nho-V3-QKP" secondAttribute="leading" constant="8" id="Olz-fF-zbH"/>
+                    <constraint firstAttribute="trailing" secondItem="V3Y-hE-PX3" secondAttribute="trailing" constant="7" id="ljc-I6-vIC"/>
+                    <constraint firstItem="V3Y-hE-PX3" firstAttribute="leading" secondItem="s4R-pX-UZX" secondAttribute="trailing" constant="8" id="pLV-TO-mH8"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

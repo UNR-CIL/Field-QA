@@ -10,6 +10,8 @@
 
 @interface ServiceEntryDetailViewController ()
 
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
 @end
 
 @implementation ServiceEntryDetailViewController
