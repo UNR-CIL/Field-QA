@@ -2,12 +2,15 @@
 //  ServiceEntry.m
 //  Field QA
 //
-//  Created by John Jusayan on 4/28/14.
+//  Created by John Jusayan on 4/29/14.
 //  Copyright (c) 2014 CSE UNR. All rights reserved.
 //
 
 #import "ServiceEntry.h"
 #import "Component.h"
+#import "Deployment.h"
+#import "Person.h"
+#import "System.h"
 
 
 @implementation ServiceEntry

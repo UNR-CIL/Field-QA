@@ -2,14 +2,14 @@
 //  Project.h
 //  Field QA
 //
-//  Created by John Jusayan on 4/28/14.
+//  Created by John Jusayan on 4/29/14.
 //  Copyright (c) 2014 CSE UNR. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Person;
+@class Deployment, Person;
 
 @interface Project : NSManagedObject
 
@@ -27,8 +27,8 @@
 - (void)addContacts:(NSSet *)values;
 - (void)removeContacts:(NSSet *)values;
 
-- (void)addDeploymentsObject:(NSManagedObject *)value;
-- (void)removeDeploymentsObject:(NSManagedObject *)value;
+- (void)addDeploymentsObject:(Deployment *)value;
+- (void)removeDeploymentsObject:(Deployment *)value;
 - (void)addDeployments:(NSSet *)values;
 - (void)removeDeployments:(NSSet *)values;
 

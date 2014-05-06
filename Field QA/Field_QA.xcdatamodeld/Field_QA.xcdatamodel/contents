@@ -14,7 +14,7 @@
         <relationship name="creator" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="components" inverseEntity="Person" syncable="YES"/>
         <relationship name="currentLogicalDevice" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LogicalDevice" inverseName="currentComponent" inverseEntity="LogicalDevice" syncable="YES"/>
         <relationship name="logicalDevice" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LogicalDevice" inverseName="components" inverseEntity="LogicalDevice" syncable="YES"/>
-        <relationship name="serviceEntries" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ServiceEntry" inverseName="components" inverseEntity="ServiceEntry" syncable="YES"/>
+        <relationship name="serviceEntries" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ServiceEntry" inverseName="components" inverseEntity="ServiceEntry" syncable="YES"/>
     </entity>
     <entity name="Deployment" representedClassName="Deployment" syncable="YES">
         <attribute name="creationDate" optional="YES" attributeType="Date" syncable="YES"/>
@@ -24,9 +24,9 @@
         <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="creator" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="createdDeployments" inverseEntity="Person" syncable="YES"/>
         <relationship name="project" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Project" inverseName="deployments" inverseEntity="Project" syncable="YES"/>
-        <relationship name="serviceEntries" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ServiceEntry" inverseName="deployments" inverseEntity="ServiceEntry" syncable="YES"/>
-        <relationship name="systems" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="System" inverseName="deployment" inverseEntity="System" syncable="YES"/>
-        <relationship name="users" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="managedDeployments" inverseEntity="Person" syncable="YES"/>
+        <relationship name="serviceEntries" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ServiceEntry" inverseName="deployments" inverseEntity="ServiceEntry" syncable="YES"/>
+        <relationship name="systems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="System" inverseName="deployment" inverseEntity="System" syncable="YES"/>
+        <relationship name="users" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Person" inverseName="managedDeployments" inverseEntity="Person" syncable="YES"/>
     </entity>
     <entity name="LogicalDevice" representedClassName="LogicalDevice" syncable="YES">
         <attribute name="creationDate" optional="YES" attributeType="Date" syncable="YES"/>
@@ -79,7 +79,7 @@
         <relationship name="creator" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="systems" inverseEntity="Person" syncable="YES"/>
         <relationship name="deployment" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deployment" inverseName="systems" inverseEntity="Deployment" syncable="YES"/>
         <relationship name="logicalDevice" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LogicalDevice" inverseName="system" inverseEntity="LogicalDevice" syncable="YES"/>
-        <relationship name="serviceEntries" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ServiceEntry" inverseName="systems" inverseEntity="ServiceEntry" syncable="YES"/>
+        <relationship name="serviceEntries" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ServiceEntry" inverseName="systems" inverseEntity="ServiceEntry" syncable="YES"/>
     </entity>
     <elements>
         <element name="Component" positionX="693" positionY="306" width="128" height="253"/>

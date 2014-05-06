@@ -1,25 +1,32 @@
 //
-//  TNDataController.m
-//  TNKit
+//  QADataController.m
+//  Field QA
 //
 //  Created by John Jusayan on 4/23/14.
-//  Copyright (c) 2014 Treeness, LLC. All rights reserved.
+//  Copyright (c) 2014 CSE UNR. All rights reserved.
 //
 
-#import "TNDataController.h"
+#import "QADataController.h"
 
-@implementation TNDataController
+@interface QADataController ()
+
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+
+@end
+
+@implementation QADataController
 
 - (instancetype)init
 {
-    return [self initWithEntityName:nil sortDescriptors:nil inManagedObjectContext:nil];
+    return [self initWithEntityName:nil sortDescriptors:nil inManagedObjectContext:nil delegate:nil];
 }
 
-- (instancetype)initWithEntityName:(NSString*)entityName sortDescriptors:(NSArray*)sortDescriptors inManagedObjectContext:(NSManagedObjectContext*)managedObjectContext
+- (instancetype)initWithEntityName:(NSString*)entityName sortDescriptors:(NSArray*)sortDescriptors inManagedObjectContext:(NSManagedObjectContext*)managedObjectContext delegate:(id<QACellConfiguration>)delegate
 {
     self = [super init];
     
     if (self) {
+        _delegate = delegate;
         _entityName = entityName;
         _sortDescriptors = sortDescriptors;
         _managedObjectContext = managedObjectContext;
@@ -63,6 +70,31 @@
     
     return _fetchedResultsController;
 }
+
+- (NSIndexPath*)indexPathForObject:(NSManagedObject*)object
+{
+    return [self.fetchedResultsController indexPathForObject:object];
+}
+
+- (id)objectAtIndexPath:(NSIndexPath*)indexPath
+{
+    return [self.fetchedResultsController objectAtIndexPath:indexPath];
+}
+
+
+#pragma mark - UITableView
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return [[self.fetchedResultsController sections] count];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
+    return [sectionInfo numberOfObjects];
+}
+
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
 {
@@ -110,10 +142,10 @@
         }
         case NSFetchedResultsChangeUpdate: {
             if (self.tableView) {
-                [self.tableView configureCell:[self.tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+                [self.delegate configureTableViewCell:[self.tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
             }
             else if (self.collectionView) {
-                [self.collectionView configureCell:[self.collectionView cellForItemAtIndexPath:indexPath] atIndexPath:indexPath];
+                [self.delegate configureCollectionViewCell:[self.collectionView cellForItemAtIndexPath:indexPath] atIndexPath:indexPath];
             }
             break;
         }

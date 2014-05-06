@@ -2,14 +2,14 @@
 //  ServiceEntry.h
 //  Field QA
 //
-//  Created by John Jusayan on 4/28/14.
+//  Created by John Jusayan on 4/29/14.
 //  Copyright (c) 2014 CSE UNR. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Component;
+@class Component, Deployment, Person, System;
 
 @interface ServiceEntry : NSManagedObject
 
@@ -19,7 +19,7 @@
 @property (nonatomic, retain) NSString * notes;
 @property (nonatomic, retain) id photo;
 @property (nonatomic, retain) NSSet *components;
-@property (nonatomic, retain) NSManagedObject *creator;
+@property (nonatomic, retain) Person *creator;
 @property (nonatomic, retain) NSSet *deployments;
 @property (nonatomic, retain) NSSet *systems;
 @property (nonatomic, retain) NSSet *users;
@@ -32,18 +32,18 @@
 - (void)addComponents:(NSSet *)values;
 - (void)removeComponents:(NSSet *)values;
 
-- (void)addDeploymentsObject:(NSManagedObject *)value;
-- (void)removeDeploymentsObject:(NSManagedObject *)value;
+- (void)addDeploymentsObject:(Deployment *)value;
+- (void)removeDeploymentsObject:(Deployment *)value;
 - (void)addDeployments:(NSSet *)values;
 - (void)removeDeployments:(NSSet *)values;
 
-- (void)addSystemsObject:(NSManagedObject *)value;
-- (void)removeSystemsObject:(NSManagedObject *)value;
+- (void)addSystemsObject:(System *)value;
+- (void)removeSystemsObject:(System *)value;
 - (void)addSystems:(NSSet *)values;
 - (void)removeSystems:(NSSet *)values;
 
-- (void)addUsersObject:(NSManagedObject *)value;
-- (void)removeUsersObject:(NSManagedObject *)value;
+- (void)addUsersObject:(Person *)value;
+- (void)removeUsersObject:(Person *)value;
 - (void)addUsers:(NSSet *)values;
 - (void)removeUsers:(NSSet *)values;
 

@@ -2,14 +2,14 @@
 //  Person.h
 //  Field QA
 //
-//  Created by John Jusayan on 4/28/14.
+//  Created by John Jusayan on 4/29/14.
 //  Copyright (c) 2014 CSE UNR. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Component, ServiceEntry;
+@class Component, Deployment, Project, ServiceEntry, System;
 
 @interface Person : NSManagedObject
 
@@ -33,18 +33,18 @@
 - (void)addComponents:(NSSet *)values;
 - (void)removeComponents:(NSSet *)values;
 
-- (void)addCreatedDeploymentsObject:(NSManagedObject *)value;
-- (void)removeCreatedDeploymentsObject:(NSManagedObject *)value;
+- (void)addCreatedDeploymentsObject:(Deployment *)value;
+- (void)removeCreatedDeploymentsObject:(Deployment *)value;
 - (void)addCreatedDeployments:(NSSet *)values;
 - (void)removeCreatedDeployments:(NSSet *)values;
 
-- (void)addManagedDeploymentsObject:(NSManagedObject *)value;
-- (void)removeManagedDeploymentsObject:(NSManagedObject *)value;
+- (void)addManagedDeploymentsObject:(Deployment *)value;
+- (void)removeManagedDeploymentsObject:(Deployment *)value;
 - (void)addManagedDeployments:(NSSet *)values;
 - (void)removeManagedDeployments:(NSSet *)values;
 
-- (void)addProjectsObject:(NSManagedObject *)value;
-- (void)removeProjectsObject:(NSManagedObject *)value;
+- (void)addProjectsObject:(Project *)value;
+- (void)removeProjectsObject:(Project *)value;
 - (void)addProjects:(NSSet *)values;
 - (void)removeProjects:(NSSet *)values;
 
@@ -58,8 +58,8 @@
 - (void)addServiceEntriesCreated:(NSSet *)values;
 - (void)removeServiceEntriesCreated:(NSSet *)values;
 
-- (void)addSystemsObject:(NSManagedObject *)value;
-- (void)removeSystemsObject:(NSManagedObject *)value;
+- (void)addSystemsObject:(System *)value;
+- (void)removeSystemsObject:(System *)value;
 - (void)addSystems:(NSSet *)values;
 - (void)removeSystems:(NSSet *)values;
 

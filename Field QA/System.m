@@ -2,11 +2,12 @@
 //  System.m
 //  Field QA
 //
-//  Created by John Jusayan on 4/28/14.
+//  Created by John Jusayan on 4/29/14.
 //  Copyright (c) 2014 CSE UNR. All rights reserved.
 //
 
 #import "System.h"
+#import "Deployment.h"
 #import "LogicalDevice.h"
 #import "Person.h"
 #import "ServiceEntry.h"

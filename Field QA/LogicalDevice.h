@@ -2,14 +2,14 @@
 //  LogicalDevice.h
 //  Field QA
 //
-//  Created by John Jusayan on 4/28/14.
+//  Created by John Jusayan on 4/29/14.
 //  Copyright (c) 2014 CSE UNR. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Component;
+@class Component, System;
 
 @interface LogicalDevice : NSManagedObject
 
@@ -18,7 +18,7 @@
 @property (nonatomic, retain) NSString * notes;
 @property (nonatomic, retain) NSSet *components;
 @property (nonatomic, retain) Component *currentComponent;
-@property (nonatomic, retain) NSManagedObject *system;
+@property (nonatomic, retain) System *system;
 @end
 
 @interface LogicalDevice (CoreDataGeneratedAccessors)

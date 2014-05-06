@@ -7,12 +7,14 @@
 //
 
 #import "ProjectDetailViewController.h"
+#import "QADataController.h"
 #import "Project.h"
+#import "Deployment.h"
 
-@interface ProjectDetailViewController ()
+@interface ProjectDetailViewController () <QACellConfiguration>
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-
+@property (strong, nonatomic) QADataController *dataController;
 @end
 
 @implementation ProjectDetailViewController
@@ -26,6 +28,12 @@
     return self;
 }
 
+- (void)awakeFromNib
+{
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    self.managedObjectContext = appDelegate.managedObjectContext;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -35,6 +43,44 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    NSSortDescriptor *nameSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+    self.dataController = [[QADataController alloc] initWithEntityName:@"Deployment" sortDescriptors:@[nameSortDescriptor] inManagedObjectContext:self.managedObjectContext delegate:self];
+    
+    
+    if (self.detailProject == nil) {
+        self.detailProject = [NSEntityDescription insertNewObjectForEntityForName:@"Project" inManagedObjectContext:self.managedObjectContext];
+    }
+    
+    self.nameTextField.text = self.detailProject.name;
+    self.notesTextView.text = self.detailProject.notes;
+    
+    if (self.detailProject.creationDate == nil) {
+        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveData:)];
+        self.navigationItem.rightBarButtonItem = saveButton;
+    }
+}
+
+- (void)saveData:(id)sender
+{
+    self.detailProject.name = self.nameTextField.text;
+    self.detailProject.notes = self.notesTextView.text;
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+
+    [self saveData:nil];
+}
+
+- (void)addContact:(id)sender;
+{
+    
+}
+
+- (void)addDeployment:(id)sender
+{
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,16 +93,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return [self.dataController numberOfSectionsInTableView:tableView];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return [self.dataController tableView:tableView numberOfRowsInSection:section];
 }
 
 /*
@@ -118,5 +160,18 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return @"Deployments";
+}
+
+- (void)configureTableViewCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+    
+    Deployment *deployment = (Deployment*)[self.dataController objectAtIndexPath:indexPath];
+    cell.textLabel.text = deployment.name ? deployment.name : @"A Deployment";
+    cell.detailTextLabel.text = [deployment.creationDate description];
+}
 
 @end

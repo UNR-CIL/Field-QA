@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class Project;
+
 @interface ProjectDetailViewController : UITableViewController
+
+@property (strong, nonatomic) Project *detailProject;
+@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+@property (weak, nonatomic) IBOutlet UITextView *notesTextView;
 
 @end

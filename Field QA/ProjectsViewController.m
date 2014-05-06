@@ -8,11 +8,12 @@
 
 #import "ProjectsViewController.h"
 #import "Project.h"
+#import "ProjectDetailViewController.h"
 
 @interface ProjectsViewController ()
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-@property (strong, nonatomic) TNDataController *dataController;
+@property (strong, nonatomic) QADataController *dataController;
 
 @end
 
@@ -46,12 +47,19 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addItem:)];
     self.navigationItem.rightBarButtonItem = addButton;
     NSSortDescriptor *nameSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
-    self.dataController = [[TNDataController alloc] initWithEntityName:@"Project" sortDescriptors:@[nameSortDescriptor] inManagedObjectContext:self.managedObjectContext];
+    self.dataController = [[QADataController alloc] initWithEntityName:@"Project" sortDescriptors:@[nameSortDescriptor] inManagedObjectContext:self.managedObjectContext delegate:self];
+    self.dataController.tableView = self.tableView;
+    
+    self.title = @"Projects";
 }
 
 - (IBAction)addItem:(id)sender
 {
     Project *newProject = (Project*)[NSEntityDescription insertNewObjectForEntityForName:@"Project" inManagedObjectContext:self.dataController.managedObjectContext];
+    
+    NSIndexPath *indexPath = [self.dataController indexPathForObject:newProject];
+    
+    [self performSegueWithIdentifier:@"ProjectDetailViewController" sender:indexPath];
 }
 
 - (void)didReceiveMemoryWarning
@@ -64,20 +72,21 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [[self.dataController.fetchedResultsController sections] count];
+    return [self.dataController numberOfSectionsInTableView:tableView];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    id <NSFetchedResultsSectionInfo> sectionInfo = [self.dataController.fetchedResultsController sections][section];
-    return [sectionInfo numberOfObjects];
+    return [self.dataController tableView:tableView numberOfRowsInSection:section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ProjectCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    NSLog(@"indexPath %@", indexPath);
+    
+    [self configureTableViewCell:cell atIndexPath:indexPath];
     
     return cell;
 }
@@ -123,11 +132,26 @@
 
 #pragma mark - Navigation
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"ProjectDetailViewController" sender:indexPath];
+}
+
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    
+    if ([segue.identifier isEqualToString:@"ProjectDetailViewController"]) {
+        Project *detailProject = [self.dataController objectAtIndexPath:(NSIndexPath*)sender];
+        ProjectDetailViewController *detailViewController =  (ProjectDetailViewController*)segue.destinationViewController;
+        detailViewController.detailProject = detailProject;
+    }
 }
 
+- (void)configureTableViewCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+    Project *project = (Project*)[self.dataController objectAtIndexPath:indexPath];
+    cell.textLabel.text = project.name ? project.name : @"A Project";
+    cell.detailTextLabel.text = [project.creationDate description];
+}
 
 @end
