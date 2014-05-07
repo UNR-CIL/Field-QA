@@ -58,6 +58,8 @@
         UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveData:)];
         self.navigationItem.rightBarButtonItem = saveButton;
     }
+    
+    self.title = @"Project Detail";
 }
 
 - (void)saveData:(id)sender
@@ -78,9 +80,10 @@
     
 }
 
-- (void)addDeployment:(id)sender
+- (IBAction)addDeployment:(id)sender
 {
-    
+    NSLog(@">>> %@", NSStringFromSelector(_cmd));
+    [self performSegueWithIdentifier:@"DeploymentDetailViewController" sender:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -101,16 +104,16 @@
     return [self.dataController tableView:tableView numberOfRowsInSection:section];
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DeploymentCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    NSLog(@"indexPath %@", indexPath);
+    
+    [self configureTableViewCell:cell atIndexPath:indexPath];
     
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.

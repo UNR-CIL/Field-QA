@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @class Project;
+#import "QADataController.h"
 
-@interface ProjectDetailViewController : UITableViewController
+@interface ProjectDetailViewController : UITableViewController <QACellConfiguration>
 
 @property (strong, nonatomic) Project *detailProject;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;

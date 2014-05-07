@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "QADataController.h"
 
-@interface DeploymentsViewController : UITableViewController
+
+@interface DeploymentsViewController : UITableViewController <QACellConfiguration>
 
 @end

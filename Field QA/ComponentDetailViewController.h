@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "QADataController.h"
 
-@interface ComponentDetailViewController : UITableViewController
+@class Component;
+
+@interface ComponentDetailViewController : UITableViewController <QACellConfiguration>
+
+@property (nonatomic, weak) IBOutlet UITextField *nameTextField;
+@property (nonatomic, weak) IBOutlet UITextView *notesTextView;
+@property (nonatomic) Component *detailComponent;
 
 @end

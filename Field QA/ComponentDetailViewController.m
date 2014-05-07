@@ -7,10 +7,13 @@
 //
 
 #import "ComponentDetailViewController.h"
+#import "Component.h"
+#import "ServiceEntry.h"
 
 @interface ComponentDetailViewController ()
 
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic) QADataController *dataController;
 
 @end
 
@@ -25,6 +28,12 @@
     return self;
 }
 
+- (void)awakeFromNib
+{
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    self.managedObjectContext = appDelegate.managedObjectContext;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -34,6 +43,47 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    NSSortDescriptor *nameSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+    self.dataController = [[QADataController alloc] initWithEntityName:@"ServiceEntry" sortDescriptors:@[nameSortDescriptor] inManagedObjectContext:self.managedObjectContext delegate:self];
+    
+    
+    if (self.detailComponent == nil) {
+        self.detailComponent = [NSEntityDescription insertNewObjectForEntityForName:@"Component" inManagedObjectContext:self.managedObjectContext];
+    }
+    
+    self.nameTextField.text = self.detailComponent.name;
+    self.notesTextView.text = self.detailComponent.notes;
+    
+    if (self.detailComponent.creationDate == nil) {
+        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveData:)];
+        self.navigationItem.rightBarButtonItem = saveButton;
+    }
+    
+    self.title = @"Component Detail";
+}
+
+- (void)saveData:(id)sender
+{
+    self.detailComponent.name = self.nameTextField.text;
+    self.detailComponent.notes = self.notesTextView.text;
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [self saveData:nil];
+}
+
+- (void)addContact:(id)sender;
+{
+    
+}
+
+- (IBAction)addServiceEntry:(id)sender
+{
+#warning Fix this
+    NSLog(@">>> %@", NSStringFromSelector(_cmd));
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,16 +108,17 @@
     return 0;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ServiceEntryCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    NSLog(@"indexPath %@", indexPath);
+    
+    [self configureTableViewCell:cell atIndexPath:indexPath];
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -117,5 +168,17 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return @"Service Entries";
+}
+
+- (void)configureTableViewCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+    
+    ServiceEntry *serviceEntry = (ServiceEntry*)[self.dataController objectAtIndexPath:indexPath];
+    cell.detailTextLabel.text = [serviceEntry.creationDate description];
+}
 
 @end

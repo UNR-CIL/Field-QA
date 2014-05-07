@@ -7,10 +7,13 @@
 //
 
 #import "SystemDetailViewController.h"
+#import "System.h"
+#import "Component.h"
 
 @interface SystemDetailViewController ()
 
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic) QADataController *dataController;
 
 @end
 
@@ -25,6 +28,12 @@
     return self;
 }
 
+- (void)awakeFromNib
+{
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    self.managedObjectContext = appDelegate.managedObjectContext;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -34,7 +43,49 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    NSSortDescriptor *nameSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+    self.dataController = [[QADataController alloc] initWithEntityName:@"Component" sortDescriptors:@[nameSortDescriptor] inManagedObjectContext:self.managedObjectContext delegate:self];
+    
+    
+    if (self.detailSystem == nil) {
+        self.detailSystem = [NSEntityDescription insertNewObjectForEntityForName:@"System" inManagedObjectContext:self.managedObjectContext];
+    }
+    
+    self.nameTextField.text = self.detailSystem.name;
+    self.notesTextView.text = self.detailSystem.notes;
+    
+    if (self.detailSystem.creationDate == nil) {
+        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveData:)];
+        self.navigationItem.rightBarButtonItem = saveButton;
+    }
+    
+    self.title = @"System Detail";
 }
+
+- (void)saveData:(id)sender
+{
+    self.detailSystem.name = self.nameTextField.text;
+    self.detailSystem.notes = self.notesTextView.text;
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [self saveData:nil];
+}
+
+- (void)addContact:(id)sender;
+{
+    
+}
+
+- (IBAction)addComponent:(id)sender
+{
+    NSLog(@">>> %@", NSStringFromSelector(_cmd));
+    [self performSegueWithIdentifier:@"ComponentDetailViewController" sender:self];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -117,5 +168,18 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return @"Components";
+}
+
+- (void)configureTableViewCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+    
+    Component *components = (Component*)[self.dataController objectAtIndexPath:indexPath];
+    cell.textLabel.text = components.name ? components.name : @"A Component";
+    cell.detailTextLabel.text = [components.creationDate description];
+}
 
 @end

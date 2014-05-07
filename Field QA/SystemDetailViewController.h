@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SystemDetailViewController : UITableViewController
+#import "QADataController.h"
+
+@class System;
+
+@interface SystemDetailViewController : UITableViewController <QACellConfiguration>
+
+@property (nonatomic, weak) IBOutlet UITextField *nameTextField;
+@property (nonatomic, weak) IBOutlet UITextView *notesTextView;
+@property (nonatomic) System *detailSystem;
 
 @end

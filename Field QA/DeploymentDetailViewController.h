@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "QADataController.h"
 
-@interface DeploymentDetailViewController : UITableViewController
+@class Deployment;
+
+@interface DeploymentDetailViewController : UITableViewController <QACellConfiguration>
+
+@property (nonatomic, weak) IBOutlet UITextField *nameTextField;
+@property (nonatomic, weak) IBOutlet UITextView *notesTextView;
+@property (nonatomic) Deployment *detailDeployment;
 
 @end

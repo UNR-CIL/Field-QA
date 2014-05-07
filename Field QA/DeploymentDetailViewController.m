@@ -7,10 +7,14 @@
 //
 
 #import "DeploymentDetailViewController.h"
+#import "Deployment.h"
+#import "System.h"
+#import "QADataController.h"
 
 @interface DeploymentDetailViewController ()
 
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic) QADataController *dataController;
 
 @end
 
@@ -25,6 +29,12 @@
     return self;
 }
 
+- (void)awakeFromNib
+{
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    self.managedObjectContext = appDelegate.managedObjectContext;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -34,6 +44,47 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    NSSortDescriptor *nameSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+    self.dataController = [[QADataController alloc] initWithEntityName:@"System" sortDescriptors:@[nameSortDescriptor] inManagedObjectContext:self.managedObjectContext delegate:self];
+    
+    
+    if (self.detailDeployment == nil) {
+        self.detailDeployment = [NSEntityDescription insertNewObjectForEntityForName:@"Deployment" inManagedObjectContext:self.managedObjectContext];
+    }
+    
+    self.nameTextField.text = self.detailDeployment.name;
+    self.notesTextView.text = self.detailDeployment.notes;
+    
+    if (self.detailDeployment.creationDate == nil) {
+        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveData:)];
+        self.navigationItem.rightBarButtonItem = saveButton;
+    }
+    
+    self.title = @"Deployment Detail";
+}
+
+- (void)saveData:(id)sender
+{
+    self.detailDeployment.name = self.nameTextField.text;
+    self.detailDeployment.notes = self.notesTextView.text;
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [self saveData:nil];
+}
+
+- (void)addContact:(id)sender;
+{
+    
+}
+
+- (IBAction)addSystem:(id)sender
+{
+    NSLog(@">>> %@", NSStringFromSelector(_cmd));
+    [self performSegueWithIdentifier:@"SystemDetailViewController" sender:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,17 +109,16 @@
     return 0;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SystemCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    NSLog(@"indexPath %@", indexPath);
+    
+    [self configureTableViewCell:cell atIndexPath:indexPath];
     
     return cell;
 }
-*/
-
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -117,5 +167,18 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return @"Systems";
+}
+
+- (void)configureTableViewCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+    
+    Deployment *deployment = (Deployment*)[self.dataController objectAtIndexPath:indexPath];
+    cell.textLabel.text = deployment.name ? deployment.name : @"A Deployment";
+    cell.detailTextLabel.text = [deployment.creationDate description];
+}
 
 @end
