@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		63BD1AEDE79E4DC1B7FE08B1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4CA2515C78B486D9570576B /* libPods.a */; };
+		AB3B6AB119217BB800E51C7B /* CurrentComponentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3B6AAF19217BB800E51C7B /* CurrentComponentViewController.m */; };
 		AB3B861919105A8000040DD5 /* Component.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3B861819105A8000040DD5 /* Component.m */; };
 		AB3B861C19105A8000040DD5 /* Deployment.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3B861B19105A8000040DD5 /* Deployment.m */; };
 		AB3B861F19105A8000040DD5 /* LogicalDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3B861E19105A8000040DD5 /* LogicalDevice.m */; };
@@ -62,6 +63,8 @@
 
 /* Begin PBXFileReference section */
 		2A6A8C0C7BF34DA58020B80B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		AB3B6AAF19217BB800E51C7B /* CurrentComponentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentComponentViewController.m; sourceTree = "<group>"; };
+		AB3B6AB019217BB800E51C7B /* CurrentComponentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentComponentViewController.h; sourceTree = "<group>"; };
 		AB3B861719105A8000040DD5 /* Component.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Component.h; sourceTree = "<group>"; };
 		AB3B861819105A8000040DD5 /* Component.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Component.m; sourceTree = "<group>"; };
 		AB3B861A19105A8000040DD5 /* Deployment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deployment.h; sourceTree = "<group>"; };
@@ -197,6 +200,8 @@
 				AB4CFEC918F5D3470052F590 /* AppDelegate.m */,
 				AB8DE00018FF0E60005A1093 /* ComponentDetailViewController.h */,
 				AB8DE00118FF0E60005A1093 /* ComponentDetailViewController.m */,
+				AB3B6AB019217BB800E51C7B /* CurrentComponentViewController.h */,
+				AB3B6AAF19217BB800E51C7B /* CurrentComponentViewController.m */,
 				AB8DDFFD18FF0E47005A1093 /* ComponentsViewController.h */,
 				AB8DDFFE18FF0E47005A1093 /* ComponentsViewController.m */,
 				AB8DDFF418FF0B56005A1093 /* DeploymentDetailViewController.h */,
@@ -447,6 +452,7 @@
 				AB4CFEC618F5D3470052F590 /* main.m in Sources */,
 				AB8DE00E18FF0EEE005A1093 /* PersonDetailViewController.m in Sources */,
 				AB8DDFFF18FF0E47005A1093 /* ComponentsViewController.m in Sources */,
+				AB3B6AB119217BB800E51C7B /* CurrentComponentViewController.m in Sources */,
 				AB8DDFF918FF0DFE005A1093 /* SystemsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
