@@ -13,7 +13,6 @@
 @interface CurrentComponentViewController ()
 
 @property (nonatomic) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic) QADataController *dataController;
 
 @end
 
@@ -36,7 +35,6 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     NSSortDescriptor *nameSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
-    self.dataController = [[QADataController alloc] initWithEntityName:@"ServiceEntry" sortDescriptors:@[nameSortDescriptor] inManagedObjectContext:self.managedObjectContext delegate:self];
     
     
     if (self.detailComponent == nil) {
