@@ -13,7 +13,8 @@
 @interface CurrentComponentViewController ()
 
 @property (nonatomic) NSManagedObjectContext *mainManagedObjectContext;
-@property (nonatomic) NSManagedObjectContext *childManagedObjectContext;
+@property (strong, nonatomic) UIPopoverController *masterPopoverController;
+- (void)configureView;
 
 @end
 
@@ -30,42 +31,17 @@
 {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    
-    self.childManagedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-    self.childManagedObjectContext.parentContext = self.mainManagedObjectContext;
-    
-    if (self.detailComponent == nil) {
-        self.detailComponent = [NSEntityDescription insertNewObjectForEntityForName:@"Component" inManagedObjectContext:self.childManagedObjectContext];
-    }
-    
-    self.nameTextField.text = self.detailComponent.name;
-    self.notesTextView.text = self.detailComponent.notes;
-    
-    if (self.detailComponent.creationDate == nil) {
-        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewComponent:)];
-        self.navigationItem.rightBarButtonItem = saveButton;
-    }
+
     
     self.title = @"Component Detail";
+    [self configureView];
 }
 
-- (void)addNewComponent:(id)sender
-{
 
-}
 
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    
-    [self addNewComponent:nil];
-}
+
 
 - (void)addContact:(id)sender;
 {
@@ -170,5 +146,47 @@
     }
 
 }
+
+#pragma mark - Managing the detail item
+
+- (void)setDetailComponent:(Component *)detailComponent
+{
+    if (_detailComponent != detailComponent) {
+        _detailComponent = detailComponent;
+        
+        // Update the view.
+        [self configureView];
+    }
+    
+    if (self.masterPopoverController != nil) {
+        [self.masterPopoverController dismissPopoverAnimated:YES];
+    }
+}
+
+- (void)configureView
+{
+    // Update the user interface for the detail item.
+    
+    if (self.detailComponent) {
+    }
+}
+
+
+#pragma mark - Split view
+
+- (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
+{
+    barButtonItem.title = NSLocalizedString(@"Components", @"Master");
+    [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
+    self.masterPopoverController = popoverController;
+}
+
+- (void)splitViewController:(UISplitViewController *)splitController willShowViewController:(UIViewController *)viewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
+{
+    // Called when the view is shown again in the split view, invalidating the button and popover controller.
+    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
+    self.masterPopoverController = nil;
+}
+
 
 @end

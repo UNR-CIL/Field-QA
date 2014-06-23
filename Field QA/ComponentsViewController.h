@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ComponentsViewController : UITableViewController
+@class CurrentComponentViewController;
+
+@interface ComponentsViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+
+@property (nonatomic) CurrentComponentViewController *detailViewController;
+
+@property (nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end

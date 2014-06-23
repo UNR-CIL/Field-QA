@@ -12,8 +12,6 @@
 
 @interface CurrentComponentViewController : UIViewController 
 
-@property (nonatomic, weak) IBOutlet UITextField *nameTextField;
-@property (nonatomic, weak) IBOutlet UITextView *notesTextView;
 @property (nonatomic) Component *detailComponent;
 
 @end
