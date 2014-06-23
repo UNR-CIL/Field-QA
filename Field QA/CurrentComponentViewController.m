@@ -12,7 +12,8 @@
 
 @interface CurrentComponentViewController ()
 
-@property (nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic) NSManagedObjectContext *mainManagedObjectContext;
+@property (nonatomic) NSManagedObjectContext *childManagedObjectContext;
 
 @end
 
@@ -22,7 +23,7 @@
 - (void)awakeFromNib
 {
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    self.managedObjectContext = appDelegate.managedObjectContext;
+    self.mainManagedObjectContext = appDelegate.managedObjectContext;
 }
 
 - (void)viewDidLoad
@@ -34,35 +35,36 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    NSSortDescriptor *nameSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
     
+    
+    self.childManagedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+    self.childManagedObjectContext.parentContext = self.mainManagedObjectContext;
     
     if (self.detailComponent == nil) {
-        self.detailComponent = [NSEntityDescription insertNewObjectForEntityForName:@"Component" inManagedObjectContext:self.managedObjectContext];
+        self.detailComponent = [NSEntityDescription insertNewObjectForEntityForName:@"Component" inManagedObjectContext:self.childManagedObjectContext];
     }
     
     self.nameTextField.text = self.detailComponent.name;
     self.notesTextView.text = self.detailComponent.notes;
     
     if (self.detailComponent.creationDate == nil) {
-        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveData:)];
+        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewComponent:)];
         self.navigationItem.rightBarButtonItem = saveButton;
     }
     
     self.title = @"Component Detail";
 }
 
-- (void)saveData:(id)sender
+- (void)addNewComponent:(id)sender
 {
-    self.detailComponent.name = self.nameTextField.text;
-    self.detailComponent.notes = self.notesTextView.text;
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
     
-    [self saveData:nil];
+    [self addNewComponent:nil];
 }
 
 - (void)addContact:(id)sender;
