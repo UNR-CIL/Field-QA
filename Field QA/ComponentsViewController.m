@@ -9,6 +9,7 @@
 #import "ComponentsViewController.h"
 #import "CurrentComponentViewController.h"
 #import "Component.h"
+#import "NSString+TNNormalize.h"
 
 @interface ComponentsViewController ()
 
@@ -244,8 +245,13 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [[object valueForKey:@"timeStamp"] description];
+    Component *component = (Component*)[self.fetchedResultsController objectAtIndexPath:indexPath];
+    if ([component.name tn_cleanString]) {
+        cell.textLabel.text = component.name.tn_cleanString;
+    }
+    else {
+        cell.textLabel.text = @"A Component";
+    }
 }
 
 @end
