@@ -46,6 +46,7 @@
 		AB8DE00818FF0EA4005A1093 /* ServiceEntryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8DE00718FF0EA4005A1093 /* ServiceEntryDetailViewController.m */; };
 		AB8DE00B18FF0EDE005A1093 /* PersonsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8DE00A18FF0EDE005A1093 /* PersonsViewController.m */; };
 		AB8DE00E18FF0EEE005A1093 /* PersonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8DE00D18FF0EEE005A1093 /* PersonDetailViewController.m */; };
+		ABABC67D194784FA003B37B7 /* NSString+TNNormalize.m in Sources */ = {isa = PBXBuildFile; fileRef = ABABC67C194784FA003B37B7 /* NSString+TNNormalize.m */; };
 		ABC6FB5018FC60B4001E6420 /* ImageToDataTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC6FB4F18FC60B4001E6420 /* ImageToDataTransformer.m */; };
 		ABC6FB5C18FC7A9F001E6420 /* TextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC6FB5B18FC7A9F001E6420 /* TextFieldTableViewCell.m */; };
 		ABC6FB5E18FC7ABD001E6420 /* TextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABC6FB5D18FC7ABD001E6420 /* TextFieldTableViewCell.xib */; };
@@ -125,6 +126,8 @@
 		AB8DE00A18FF0EDE005A1093 /* PersonsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonsViewController.m; sourceTree = "<group>"; };
 		AB8DE00C18FF0EEE005A1093 /* PersonDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonDetailViewController.h; sourceTree = "<group>"; };
 		AB8DE00D18FF0EEE005A1093 /* PersonDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonDetailViewController.m; sourceTree = "<group>"; };
+		ABABC67B194784FA003B37B7 /* NSString+TNNormalize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TNNormalize.h"; sourceTree = "<group>"; };
+		ABABC67C194784FA003B37B7 /* NSString+TNNormalize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TNNormalize.m"; sourceTree = "<group>"; };
 		ABC6FB4E18FC60B4001E6420 /* ImageToDataTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageToDataTransformer.h; sourceTree = "<group>"; };
 		ABC6FB4F18FC60B4001E6420 /* ImageToDataTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageToDataTransformer.m; sourceTree = "<group>"; };
 		ABC6FB5A18FC7A9F001E6420 /* TextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldTableViewCell.h; sourceTree = "<group>"; };
@@ -198,44 +201,35 @@
 			children = (
 				AB4CFEC818F5D3470052F590 /* AppDelegate.h */,
 				AB4CFEC918F5D3470052F590 /* AppDelegate.m */,
-				AB8DE00018FF0E60005A1093 /* ComponentDetailViewController.h */,
-				AB8DE00118FF0E60005A1093 /* ComponentDetailViewController.m */,
-				AB3B6AB019217BB800E51C7B /* CurrentComponentViewController.h */,
-				AB3B6AAF19217BB800E51C7B /* CurrentComponentViewController.m */,
 				AB8DDFFD18FF0E47005A1093 /* ComponentsViewController.h */,
 				AB8DDFFE18FF0E47005A1093 /* ComponentsViewController.m */,
-				AB8DDFF418FF0B56005A1093 /* DeploymentDetailViewController.h */,
-				AB8DDFF518FF0B56005A1093 /* DeploymentDetailViewController.m */,
+				AB3B6AB019217BB800E51C7B /* CurrentComponentViewController.h */,
+				AB3B6AAF19217BB800E51C7B /* CurrentComponentViewController.m */,
 				AB8DDFF118FF0B46005A1093 /* DeploymentsViewController.h */,
 				AB8DDFF218FF0B46005A1093 /* DeploymentsViewController.m */,
-				AB701242190F0B1200A8E08C /* Model */,
+				ABABC67A194783F6003B37B7 /* DetailViewControllers */,
 				AB4CFEDA18F5D3470052F590 /* Images.xcassets */,
 				ABC6FB4E18FC60B4001E6420 /* ImageToDataTransformer.h */,
 				ABC6FB4F18FC60B4001E6420 /* ImageToDataTransformer.m */,
 				AB4CFECE18F5D3470052F590 /* Main_iPad.storyboard */,
 				AB4CFECB18F5D3470052F590 /* Main_iPhone.storyboard */,
-				AB8DE00C18FF0EEE005A1093 /* PersonDetailViewController.h */,
-				AB8DE00D18FF0EEE005A1093 /* PersonDetailViewController.m */,
+				AB701242190F0B1200A8E08C /* Model */,
 				AB8DE00918FF0EDE005A1093 /* PersonsViewController.h */,
 				AB8DE00A18FF0EDE005A1093 /* PersonsViewController.m */,
-				AB8DDFEE18FF0B32005A1093 /* ProjectDetailViewController.h */,
-				AB8DDFEF18FF0B32005A1093 /* ProjectDetailViewController.m */,
 				AB8DDFEB18FF0B1D005A1093 /* ProjectsViewController.h */,
 				AB8DDFEC18FF0B1D005A1093 /* ProjectsViewController.m */,
+				AB70123F190EF28E00A8E08C /* QADataController.h */,
+				AB701240190EF28E00A8E08C /* QADataController.m */,
 				AB8DE00318FF0E92005A1093 /* ServiceEntriesViewController.h */,
 				AB8DE00418FF0E92005A1093 /* ServiceEntriesViewController.m */,
-				AB8DE00618FF0EA4005A1093 /* ServiceEntryDetailViewController.h */,
-				AB8DE00718FF0EA4005A1093 /* ServiceEntryDetailViewController.m */,
 				AB4CFEC018F5D3470052F590 /* Supporting Files */,
-				AB8DDFFA18FF0E11005A1093 /* SystemDetailViewController.h */,
-				AB8DDFFB18FF0E11005A1093 /* SystemDetailViewController.m */,
 				AB8DDFF718FF0DFE005A1093 /* SystemsViewController.h */,
 				AB8DDFF818FF0DFE005A1093 /* SystemsViewController.m */,
 				ABC6FB5A18FC7A9F001E6420 /* TextFieldTableViewCell.h */,
 				ABC6FB5B18FC7A9F001E6420 /* TextFieldTableViewCell.m */,
 				ABC6FB5D18FC7ABD001E6420 /* TextFieldTableViewCell.xib */,
-				AB70123F190EF28E00A8E08C /* QADataController.h */,
-				AB701240190EF28E00A8E08C /* QADataController.m */,
+				ABABC67B194784FA003B37B7 /* NSString+TNNormalize.h */,
+				ABABC67C194784FA003B37B7 /* NSString+TNNormalize.m */,
 			);
 			path = "Field QA";
 			sourceTree = "<group>";
@@ -289,6 +283,25 @@
 				AB4CFED118F5D3470052F590 /* Field_QA.xcdatamodeld */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		ABABC67A194783F6003B37B7 /* DetailViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AB8DE00018FF0E60005A1093 /* ComponentDetailViewController.h */,
+				AB8DE00118FF0E60005A1093 /* ComponentDetailViewController.m */,
+				AB8DDFF418FF0B56005A1093 /* DeploymentDetailViewController.h */,
+				AB8DDFF518FF0B56005A1093 /* DeploymentDetailViewController.m */,
+				AB8DE00C18FF0EEE005A1093 /* PersonDetailViewController.h */,
+				AB8DE00D18FF0EEE005A1093 /* PersonDetailViewController.m */,
+				AB8DDFEE18FF0B32005A1093 /* ProjectDetailViewController.h */,
+				AB8DDFEF18FF0B32005A1093 /* ProjectDetailViewController.m */,
+				AB8DE00618FF0EA4005A1093 /* ServiceEntryDetailViewController.h */,
+				AB8DE00718FF0EA4005A1093 /* ServiceEntryDetailViewController.m */,
+				AB8DDFFA18FF0E11005A1093 /* SystemDetailViewController.h */,
+				AB8DDFFB18FF0E11005A1093 /* SystemDetailViewController.m */,
+			);
+			name = DetailViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -449,6 +462,7 @@
 				AB8DE00B18FF0EDE005A1093 /* PersonsViewController.m in Sources */,
 				AB3B862819105A8000040DD5 /* Person.m in Sources */,
 				AB8DDFFC18FF0E11005A1093 /* SystemDetailViewController.m in Sources */,
+				ABABC67D194784FA003B37B7 /* NSString+TNNormalize.m in Sources */,
 				AB4CFEC618F5D3470052F590 /* main.m in Sources */,
 				AB8DE00E18FF0EEE005A1093 /* PersonDetailViewController.m in Sources */,
 				AB8DDFFF18FF0E47005A1093 /* ComponentsViewController.m in Sources */,

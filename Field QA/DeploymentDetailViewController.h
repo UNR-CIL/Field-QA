@@ -10,6 +10,7 @@
 #import "QADataController.h"
 
 @class Deployment;
+@class Project;
 
 @interface DeploymentDetailViewController : UITableViewController <QACellConfiguration>
 

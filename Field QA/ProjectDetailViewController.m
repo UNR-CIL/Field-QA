@@ -10,6 +10,8 @@
 #import "QADataController.h"
 #import "Project.h"
 #import "Deployment.h"
+#import "NSString+TNNormalize.h"
+#import "DeploymentDetailViewController.h"
 
 @interface ProjectDetailViewController () <QACellConfiguration>
 
@@ -64,8 +66,13 @@
 
 - (void)saveData:(id)sender
 {
-    self.detailProject.name = self.nameTextField.text;
-    self.detailProject.notes = self.notesTextView.text;
+    if ([self.nameTextField.text tn_cleanString]) {
+        self.detailProject.name = self.nameTextField.text;
+    }
+    
+    if ([self.notesTextView.text tn_cleanString]) {
+        self.detailProject.notes = self.notesTextView.text;
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -83,7 +90,10 @@
 - (IBAction)addDeployment:(id)sender
 {
     NSLog(@">>> %@", NSStringFromSelector(_cmd));
-    [self performSegueWithIdentifier:@"DeploymentDetailViewController" sender:self];
+    
+    Deployment *deployment = [NSEntityDescription insertNewObjectForEntityForName:@"Deployment" inManagedObjectContext:self.managedObjectContext];
+    
+    [self performSegueWithIdentifier:@"DeploymentDetailViewController" sender:deployment];
 }
 
 - (void)didReceiveMemoryWarning
@@ -153,16 +163,18 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"DeploymentDetailViewController"]) {
+        DeploymentDetailViewController *destinationViewController = (DeploymentDetailViewController*)segue.destinationViewController;
+        destinationViewController.detailDeployment = (Deployment*)sender;
+    }
 }
-*/
+
 
 - (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {

@@ -10,6 +10,7 @@
 #import "Deployment.h"
 #import "System.h"
 #import "QADataController.h"
+#import "NSString+TNNormalize.h"
 
 @interface DeploymentDetailViewController ()
 
@@ -47,11 +48,6 @@
     NSSortDescriptor *nameSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
     self.dataController = [[QADataController alloc] initWithEntityName:@"System" sortDescriptors:@[nameSortDescriptor] inManagedObjectContext:self.managedObjectContext delegate:self];
     
-    
-    if (self.detailDeployment == nil) {
-        self.detailDeployment = [NSEntityDescription insertNewObjectForEntityForName:@"Deployment" inManagedObjectContext:self.managedObjectContext];
-    }
-    
     self.nameTextField.text = self.detailDeployment.name;
     self.notesTextView.text = self.detailDeployment.notes;
     
@@ -65,8 +61,13 @@
 
 - (void)saveData:(id)sender
 {
-    self.detailDeployment.name = self.nameTextField.text;
-    self.detailDeployment.notes = self.notesTextView.text;
+    if ([self.nameTextField.text tn_cleanString]) {
+        self.detailDeployment.name = self.nameTextField.text;
+    }
+    if ([self.notesTextView.text tn_cleanString]) {
+        self.detailDeployment.notes = self.notesTextView.text;
+    }
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -74,6 +75,13 @@
     [super viewWillDisappear:animated];
     
     [self saveData:nil];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.tableView reloadData];
 }
 
 - (void)addContact:(id)sender;
@@ -95,18 +103,9 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return [self.dataController tableView:tableView numberOfRowsInSection:section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
