@@ -10,10 +10,21 @@
 #import "Component.h"
 #import "ServiceEntry.h"
 
-@interface CurrentComponentViewController ()
+#import "ProjectsViewController.h"
+#import "DeploymentsViewController.h"
+#import "SystemsViewController.h"
+#import "LogicalComponentsViewController.h"
+
+@interface CurrentComponentViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic) NSManagedObjectContext *mainManagedObjectContext;
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
+
+@property (nonatomic) UIPopoverController *projectsPopoverController;
+@property (nonatomic) UIPopoverController *deploymentsPopoverController;
+@property (nonatomic) UIPopoverController *systemsPopoverController;
+@property (nonatomic) UIPopoverController *logicalComponentsPopoverController;
+
 - (void)configureView;
 
 @end
@@ -65,7 +76,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-
     return 4;
 }
 
@@ -119,7 +129,52 @@
 }
 */
 
-/*
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@">>> indexPath %i", indexPath.row);
+    
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main_iPad" bundle:nil];
+
+    switch (indexPath.row) {
+        case 0: {
+            ProjectsViewController *projectsViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"ProjectsViewController"];
+            UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:projectsViewController];
+            UIPopoverController *popoverController = [[UIPopoverController alloc] initWithContentViewController:navigationController];
+            self.projectsPopoverController = popoverController;
+            [self.projectsPopoverController presentPopoverFromRect:cell.bounds inView:cell permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+            
+            break;
+        }
+        case 1: {
+            DeploymentsViewController *deploymentsViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"DeploymentsViewController"];
+            UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:deploymentsViewController];
+            UIPopoverController *popoverController = [[UIPopoverController alloc] initWithContentViewController:navigationController];
+            self.deploymentsPopoverController = popoverController;
+            [self.deploymentsPopoverController presentPopoverFromRect:cell.bounds inView:cell permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+            break;
+        }
+        case 2: {
+            SystemsViewController *systemsViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"SystemsViewController"];
+            UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:systemsViewController];
+            UIPopoverController *popoverController = [[UIPopoverController alloc] initWithContentViewController:navigationController];
+            self.systemsPopoverController = popoverController;
+            [self.systemsPopoverController presentPopoverFromRect:cell.bounds inView:cell permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+            break;
+        }
+        case 3: {
+            LogicalComponentsViewController *logicalComponentsViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"LogicalComponentsViewController"];
+            UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:logicalComponentsViewController];
+            UIPopoverController *popoverController = [[UIPopoverController alloc] initWithContentViewController:navigationController];
+            self.logicalComponentsPopoverController = popoverController;
+            [self.logicalComponentsPopoverController presentPopoverFromRect:cell.bounds inView:cell permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+            break;
+        }
+        default:
+            break;
+    }
+}
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -128,7 +183,7 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 - (void)configureTableViewCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {

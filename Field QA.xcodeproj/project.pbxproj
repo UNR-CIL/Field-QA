@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		63BD1AEDE79E4DC1B7FE08B1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4CA2515C78B486D9570576B /* libPods.a */; };
+		AB2317961958E8BC00918745 /* ProjectsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2317951958E8BC00918745 /* ProjectsViewController.m */; };
+		AB2317991958EC9500918745 /* DeploymentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2317981958EC9500918745 /* DeploymentsViewController.m */; };
+		AB23179C1958ECA400918745 /* SystemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB23179B1958ECA400918745 /* SystemsViewController.m */; };
+		AB23179F1958ED0900918745 /* LogicalComponentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB23179E1958ED0900918745 /* LogicalComponentsViewController.m */; };
 		AB3B6AB119217BB800E51C7B /* CurrentComponentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3B6AAF19217BB800E51C7B /* CurrentComponentViewController.m */; };
 		AB3B861919105A8000040DD5 /* Component.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3B861819105A8000040DD5 /* Component.m */; };
 		AB3B861C19105A8000040DD5 /* Deployment.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3B861B19105A8000040DD5 /* Deployment.m */; };
@@ -52,6 +56,14 @@
 
 /* Begin PBXFileReference section */
 		2A6A8C0C7BF34DA58020B80B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		AB2317941958E8BC00918745 /* ProjectsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectsViewController.h; sourceTree = "<group>"; };
+		AB2317951958E8BC00918745 /* ProjectsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectsViewController.m; sourceTree = "<group>"; };
+		AB2317971958EC9500918745 /* DeploymentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeploymentsViewController.h; sourceTree = "<group>"; };
+		AB2317981958EC9500918745 /* DeploymentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeploymentsViewController.m; sourceTree = "<group>"; };
+		AB23179A1958ECA400918745 /* SystemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemsViewController.h; sourceTree = "<group>"; };
+		AB23179B1958ECA400918745 /* SystemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemsViewController.m; sourceTree = "<group>"; };
+		AB23179D1958ED0900918745 /* LogicalComponentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogicalComponentsViewController.h; sourceTree = "<group>"; };
+		AB23179E1958ED0900918745 /* LogicalComponentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogicalComponentsViewController.m; sourceTree = "<group>"; };
 		AB3B6AAF19217BB800E51C7B /* CurrentComponentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentComponentViewController.m; sourceTree = "<group>"; };
 		AB3B6AB019217BB800E51C7B /* CurrentComponentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentComponentViewController.h; sourceTree = "<group>"; };
 		AB3B861719105A8000040DD5 /* Component.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Component.h; sourceTree = "<group>"; };
@@ -169,6 +181,14 @@
 				AB8DDFFE18FF0E47005A1093 /* ComponentsViewController.m */,
 				AB3B6AB019217BB800E51C7B /* CurrentComponentViewController.h */,
 				AB3B6AAF19217BB800E51C7B /* CurrentComponentViewController.m */,
+				AB2317941958E8BC00918745 /* ProjectsViewController.h */,
+				AB2317951958E8BC00918745 /* ProjectsViewController.m */,
+				AB2317971958EC9500918745 /* DeploymentsViewController.h */,
+				AB2317981958EC9500918745 /* DeploymentsViewController.m */,
+				AB23179A1958ECA400918745 /* SystemsViewController.h */,
+				AB23179B1958ECA400918745 /* SystemsViewController.m */,
+				AB23179D1958ED0900918745 /* LogicalComponentsViewController.h */,
+				AB23179E1958ED0900918745 /* LogicalComponentsViewController.m */,
 				AB4CFEDA18F5D3470052F590 /* Images.xcassets */,
 				ABC6FB4E18FC60B4001E6420 /* ImageToDataTransformer.h */,
 				ABC6FB4F18FC60B4001E6420 /* ImageToDataTransformer.m */,
@@ -376,15 +396,19 @@
 				AB3B862B19105A8000040DD5 /* ServiceEntry.m in Sources */,
 				AB3B861C19105A8000040DD5 /* Deployment.m in Sources */,
 				AB3B861919105A8000040DD5 /* Component.m in Sources */,
+				AB23179C1958ECA400918745 /* SystemsViewController.m in Sources */,
 				ABC6FB5C18FC7A9F001E6420 /* TextFieldTableViewCell.m in Sources */,
 				AB4CFED318F5D3470052F590 /* Field_QA.xcdatamodeld in Sources */,
 				AB4CFECA18F5D3470052F590 /* AppDelegate.m in Sources */,
 				ABC6FB5018FC60B4001E6420 /* ImageToDataTransformer.m in Sources */,
 				AB3B861F19105A8000040DD5 /* LogicalDevice.m in Sources */,
 				AB3B862519105A8000040DD5 /* System.m in Sources */,
+				AB2317991958EC9500918745 /* DeploymentsViewController.m in Sources */,
 				AB3B862219105A8000040DD5 /* Project.m in Sources */,
+				AB23179F1958ED0900918745 /* LogicalComponentsViewController.m in Sources */,
 				AB3B862819105A8000040DD5 /* Person.m in Sources */,
 				ABABC67D194784FA003B37B7 /* NSString+TNNormalize.m in Sources */,
+				AB2317961958E8BC00918745 /* ProjectsViewController.m in Sources */,
 				AB4CFEC618F5D3470052F590 /* main.m in Sources */,
 				AB8DDFFF18FF0E47005A1093 /* ComponentsViewController.m in Sources */,
 				AB3B6AB119217BB800E51C7B /* CurrentComponentViewController.m in Sources */,
