@@ -133,6 +133,8 @@
 {
     NSLog(@">>> indexPath %i", indexPath.row);
     
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main_iPad" bundle:nil];
 

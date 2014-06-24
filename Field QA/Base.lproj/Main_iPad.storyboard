@@ -114,11 +114,23 @@
                                     <outlet property="delegate" destination="N7f-QY-FiK" id="5Q4-rV-hAH"/>
                                 </connections>
                             </tableView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Component Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6tj-aq-O5b">
+                                <rect key="frame" x="224" y="331" width="320" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="G0s-js-cwL"/>
+                                    <constraint firstAttribute="width" constant="320" id="IR8-Xp-2cu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="6tj-aq-O5b" firstAttribute="top" secondItem="qPc-Zx-JBV" secondAttribute="bottom" constant="17" id="P0y-Su-oGb"/>
                             <constraint firstAttribute="centerX" secondItem="qPc-Zx-JBV" secondAttribute="centerX" id="SHa-98-PIw"/>
                             <constraint firstItem="qPc-Zx-JBV" firstAttribute="top" secondItem="mjG-nb-T7g" secondAttribute="bottom" constant="8" id="g6d-HZ-rwq"/>
+                            <constraint firstAttribute="centerX" secondItem="6tj-aq-O5b" secondAttribute="centerX" id="yXc-Ip-V6O"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7GY-mf-3em"/>
