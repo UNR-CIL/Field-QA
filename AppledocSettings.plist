@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>--project-name</key>
+	<string>Field QA iPad App</string>
+	<key>--project-company</key>
+	<string>University of Nevada, Reno - Computer Science and Engineering</string>
+	<key>--company-id</key>
+	<string>edu.unr.cse</string>
+	<key>--repeat-first-par</key>
+	<false/>
+	<key>--ignore</key>
+	<array>
+		<string>*.cpp</string>
+	</array>
+	<key>--output</key>
+	<string>/Users/jrbj/Documents/Projects/Documentation</string>
+	<key>--keep-intermediate-files</key>
+	<true/>
+</dict>
+</plist>

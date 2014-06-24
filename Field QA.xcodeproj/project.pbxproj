@@ -12,6 +12,7 @@
 		AB2317991958EC9500918745 /* DeploymentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2317981958EC9500918745 /* DeploymentsViewController.m */; };
 		AB23179C1958ECA400918745 /* SystemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB23179B1958ECA400918745 /* SystemsViewController.m */; };
 		AB23179F1958ED0900918745 /* LogicalComponentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB23179E1958ED0900918745 /* LogicalComponentsViewController.m */; };
+		AB2317A1195A28D700918745 /* AppledocSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB2317A0195A28D700918745 /* AppledocSettings.plist */; };
 		AB3B6AB119217BB800E51C7B /* CurrentComponentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3B6AAF19217BB800E51C7B /* CurrentComponentViewController.m */; };
 		AB3B861919105A8000040DD5 /* Component.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3B861819105A8000040DD5 /* Component.m */; };
 		AB3B861C19105A8000040DD5 /* Deployment.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3B861B19105A8000040DD5 /* Deployment.m */; };
@@ -64,6 +65,7 @@
 		AB23179B1958ECA400918745 /* SystemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemsViewController.m; sourceTree = "<group>"; };
 		AB23179D1958ED0900918745 /* LogicalComponentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogicalComponentsViewController.h; sourceTree = "<group>"; };
 		AB23179E1958ED0900918745 /* LogicalComponentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogicalComponentsViewController.m; sourceTree = "<group>"; };
+		AB2317A0195A28D700918745 /* AppledocSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AppledocSettings.plist; sourceTree = "<group>"; };
 		AB3B6AAF19217BB800E51C7B /* CurrentComponentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentComponentViewController.m; sourceTree = "<group>"; };
 		AB3B6AB019217BB800E51C7B /* CurrentComponentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentComponentViewController.h; sourceTree = "<group>"; };
 		AB3B861719105A8000040DD5 /* Component.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Component.h; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 		AB4CFEAB18F5D3470052F590 = {
 			isa = PBXGroup;
 			children = (
+				AB2317A0195A28D700918745 /* AppledocSettings.plist */,
 				AB4CFEBF18F5D3470052F590 /* Field QA */,
 				AB4CFEE818F5D3470052F590 /* Field QATests */,
 				AB4CFEB618F5D3470052F590 /* Frameworks */,
@@ -340,6 +343,7 @@
 				AB4CFED018F5D3470052F590 /* Main_iPad.storyboard in Resources */,
 				AB4CFEDB18F5D3470052F590 /* Images.xcassets in Resources */,
 				ABC6FB5E18FC7ABD001E6420 /* TextFieldTableViewCell.xib in Resources */,
+				AB2317A1195A28D700918745 /* AppledocSettings.plist in Resources */,
 				AB4CFECD18F5D3470052F590 /* Main_iPhone.storyboard in Resources */,
 				AB4CFEC418F5D3470052F590 /* InfoPlist.strings in Resources */,
 			);
