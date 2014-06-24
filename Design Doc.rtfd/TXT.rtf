@@ -1,0 +1,49 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf200
+{\fonttbl\f0\fnil\fcharset0 Baskerville;\f1\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red39\green118\blue207;}
+\margl1440\margr1440\vieww24360\viewh14600\viewkind0
+\deftab720
+\pard\pardeftab720\sa340
+
+\f0\b\fs94 \cf0 Field QA iPad app\
+\pard\pardeftab720\sa340
+
+\fs76 \cf0 Summary\
+\pard\pardeftab720\sa509
+
+\b0\fs34 \cf0 The Field QA iPad app is an app designed to service components out in the field. The app records data about components installed in the field and synchronizes that data with the data stored on the servers.\
+\pard\pardeftab720\sa340
+
+\b\fs76 \cf0 Architecture\
+\pard\pardeftab720\sa340
+
+\fs60 \cf0 Model Objects
+\f1\b0\fs24 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural
+\cf0 \
+{{\NeXTGraphic Field QA Models.napkin 06-24-14, 12.42.55 PM.png \width11840 \height9850
+}¬}\
+
+\f0\b\fs60 \
+\pard\pardeftab720\sa509
+
+\b0\fs34 \cf0 The main entities modeled by the app are Projects, Deployments, Systems, Logical Components, Components, Service Entries, and People. Projects can have multiple deployments. Each deployment contains one or more systems. Systems are made up of one or more components. There\'92s a logical component which represents the installed component throughout the history of its installation and a current component which represents the current physical part for that logical component.\
+Service entries can be used to create historical notes and can be attached to any of these entities. People entities are used to model contacts and responsible parties for an entity.\
+\
+\pard\pardeftab720\sa340
+
+\b\fs60 \cf0 Library Dependencies\
+\pard\pardeftab720\sa509
+
+\b0\fs34 \cf0 The Field QA app uses {\field{\*\fldinst{HYPERLINK "http://cocoapods.org/"}}{\fldrslt \cf2 CocoaPods}} for library management.\
+
+\b\fs76 \
+\pard\pardeftab720\sa340
+\cf0 Components\
+\pard\pardeftab720\sa509
+
+\b0\fs34 \cf0 The app uses {\field{\*\fldinst{HYPERLINK "http://cocoadocs.org/docsets/AFNetworking"}}{\fldrslt \cf2 AFNetworking}} for its network library.\
+The root user interface element is a {\field{\*\fldinst{HYPERLINK "https://developer.apple.com/library/ios/documentation/uikit/reference/UISplitViewController_class/Reference/Reference.html"}}{\fldrslt \cf2 UISplitViewController}}. It\'92s used to provide a master-detail view of all the components in all projects. In the detail pane, the app shows the details of the component currently being viewed.\
+The data is stored in several in {\field{\*\fldinst{HYPERLINK "https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSFetchedResultsController_Class/Reference/Reference.html"}}{\fldrslt \cf2 NSFetchedResultsControllers}}, one on each screen, and the controller sorts, indexes, and sections the data. The sectioned data is then displayed using a subclass of {\field{\*\fldinst{HYPERLINK "https://developer.apple.com/library/ios/documentation/uikit/reference/UITableView_Class/Reference/Reference.html"}}{\fldrslt \cf2 UITableViewController}} that displays items in a sectioned table view.
+\f1\fs24 \
+}
