@@ -8,12 +8,14 @@
 
 #import "ProjectsViewController.h"
 #import "AppDelegate.h"
+#import "NSString+TNNormalize.h"
+#import "ProjectDetailViewController.h"
+#import "Project.h"
 
-@interface ProjectsViewController ()
+@interface ProjectsViewController () <NSFetchedResultsControllerDelegate>
 
 @property (nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic) NSFetchedResultsController *fetchedResultsController;
-@property (nonatomic) Item *detailItem;
 
 @end
 
@@ -21,7 +23,8 @@
 
 - (void)awakeFromNib
 {
-    self.managedObjectContext =  [[[UIApplication sharedApplication] delegate] managedObjectContext];
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate] ;
+    self.managedObjectContext =  [appDelegate managedObjectContext];
 }
 
 - (void)viewDidLoad
@@ -44,7 +47,7 @@
 {
     
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass(self.detailItem.class) inManagedObjectContext:context];
+    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:@"Project" inManagedObjectContext:context];
     
     
     // Save the context.
@@ -114,18 +117,17 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-
-    }
+    NSString *detailSegue = @"ProjectDetailViewController";
+    [self performSegueWithIdentifier:detailSegue sender:indexPath];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSString *detailSegue = [NSString stringWithFormat:@"%@DetailViewController", NSStringFromClass((self.detailItem.class)];
+    NSString *detailSegue = @"ProjectDetailViewController";
     if ([[segue identifier] isEqualToString:detailSegue]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        DetailItem *detaiItem = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        [[segue destinationViewController] setDetailComponent:detailItem];
+        Project *detailItem = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        [[segue destinationViewController] setDetailProject:detailItem];
     }
 }
 
@@ -139,7 +141,7 @@
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     // Edit the entity name as appropriate.
-    NSEntityDescription *entity = [NSEntityDescription entityForName:NSStringFromClass(self.detailItem.class) inManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Project" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
     
     // Set the batch size to a suitable number.
@@ -230,12 +232,12 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    Component *component = (Component*)[self.fetchedResultsController objectAtIndexPath:indexPath];
-    if ([component.name tn_cleanString]) {
-        cell.textLabel.text = component.name.tn_cleanString;
+    Project *project = (Project*)[self.fetchedResultsController objectAtIndexPath:indexPath];
+    if ([project.name tn_cleanString]) {
+        cell.textLabel.text = project.name.tn_cleanString;
     }
     else {
-        cell.textLabel.text = NSStringFromClass(self.detailItem.class);
+        cell.textLabel.text = @"A Project";
     }
 }
 
