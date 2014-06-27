@@ -43,6 +43,7 @@
 		ABC6FB5018FC60B4001E6420 /* ImageToDataTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC6FB4F18FC60B4001E6420 /* ImageToDataTransformer.m */; };
 		ABC6FB5C18FC7A9F001E6420 /* TextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC6FB5B18FC7A9F001E6420 /* TextFieldTableViewCell.m */; };
 		ABC6FB5E18FC7ABD001E6420 /* TextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABC6FB5D18FC7ABD001E6420 /* TextFieldTableViewCell.xib */; };
+		ABF5C078195CCAB500F82F9B /* ProjectDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF5C077195CCAB500F82F9B /* ProjectDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,8 @@
 		ABC6FB5A18FC7A9F001E6420 /* TextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldTableViewCell.h; sourceTree = "<group>"; };
 		ABC6FB5B18FC7A9F001E6420 /* TextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldTableViewCell.m; sourceTree = "<group>"; };
 		ABC6FB5D18FC7ABD001E6420 /* TextFieldTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldTableViewCell.xib; sourceTree = "<group>"; };
+		ABF5C076195CCAB500F82F9B /* ProjectDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectDetailViewController.h; sourceTree = "<group>"; };
+		ABF5C077195CCAB500F82F9B /* ProjectDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectDetailViewController.m; sourceTree = "<group>"; };
 		C4CA2515C78B486D9570576B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -186,6 +189,8 @@
 				AB3B6AAF19217BB800E51C7B /* CurrentComponentViewController.m */,
 				AB2317941958E8BC00918745 /* ProjectsViewController.h */,
 				AB2317951958E8BC00918745 /* ProjectsViewController.m */,
+				ABF5C076195CCAB500F82F9B /* ProjectDetailViewController.h */,
+				ABF5C077195CCAB500F82F9B /* ProjectDetailViewController.m */,
 				AB2317971958EC9500918745 /* DeploymentsViewController.h */,
 				AB2317981958EC9500918745 /* DeploymentsViewController.m */,
 				AB23179A1958ECA400918745 /* SystemsViewController.h */,
@@ -406,6 +411,7 @@
 				AB4CFECA18F5D3470052F590 /* AppDelegate.m in Sources */,
 				ABC6FB5018FC60B4001E6420 /* ImageToDataTransformer.m in Sources */,
 				AB3B861F19105A8000040DD5 /* LogicalDevice.m in Sources */,
+				ABF5C078195CCAB500F82F9B /* ProjectDetailViewController.m in Sources */,
 				AB3B862519105A8000040DD5 /* System.m in Sources */,
 				AB2317991958EC9500918745 /* DeploymentsViewController.m in Sources */,
 				AB3B862219105A8000040DD5 /* Project.m in Sources */,

@@ -108,24 +108,68 @@
  */
 - (void)removeManagedDeployments:(NSSet *)values;
 
+/**Associate a project with this person
+ */
 - (void)addProjectsObject:(Project *)value;
+
+/**Remove a project from this person
+ */
 - (void)removeProjectsObject:(Project *)value;
+
+/**Add a set of projects to this person
+ */
 - (void)addProjects:(NSSet *)values;
+
+/**Remove several projects from this person
+ */
 - (void)removeProjects:(NSSet *)values;
 
+/**Add a service entry to this person
+ */
 - (void)addServiceEntriesObject:(ServiceEntry *)value;
+
+/**Remove a service entry from this person
+ */
 - (void)removeServiceEntriesObject:(ServiceEntry *)value;
+
+/**Add several service entries to this person
+ */
 - (void)addServiceEntries:(NSSet *)values;
+
+/**Remove several service entries from this person
+ */
 - (void)removeServiceEntries:(NSSet *)values;
 
+/**Add a service entry created by this person
+ */
 - (void)addServiceEntriesCreatedObject:(ServiceEntry *)value;
+
+/**Remove a service entry crearted by this person
+ */
 - (void)removeServiceEntriesCreatedObject:(ServiceEntry *)value;
+
+/**Add several service entries created by this person
+ */
 - (void)addServiceEntriesCreated:(NSSet *)values;
+
+/**Remove several service entries created by this person
+ */
 - (void)removeServiceEntriesCreated:(NSSet *)values;
 
+/**Add a system to this person
+ */
 - (void)addSystemsObject:(System *)value;
+
+/**Remove a system from this person
+ */
 - (void)removeSystemsObject:(System *)value;
+
+/**Add several systems to this person
+ */
 - (void)addSystems:(NSSet *)values;
+
+/**Remove several systems from this person
+ */
 - (void)removeSystems:(NSSet *)values;
 
 @end
