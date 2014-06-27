@@ -138,10 +138,10 @@
             </objects>
             <point key="canvasLocation" x="1132" y="-169"/>
         </scene>
-        <!--Logical Components View Controller-->
+        <!--Logical Devices View Controller-->
         <scene sceneID="j5l-sS-jGW">
             <objects>
-                <tableViewController restorationIdentifier="LogicalComponentsViewController" storyboardIdentifier="LogicalComponentsViewController" id="DRo-oc-EWp" customClass="LogicalComponentsViewController" sceneMemberID="viewController">
+                <tableViewController restorationIdentifier="LogicalComponentsViewController" storyboardIdentifier="LogicalComponentsViewController" id="DRo-oc-EWp" customClass="LogicalDevicesViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fJk-DP-eBt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -163,6 +163,9 @@
                     </tableView>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
+                    <connections>
+                        <segue destination="Zib-cC-1KY" kind="push" identifier="LogicalDeviceDetailViewController" id="Vxo-f8-5D1"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TIV-pb-qcf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -195,7 +198,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="FJg-Ef-DWn">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="FJg-Ef-DWn">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FJg-Ef-DWn" id="GIc-mW-4sk">
@@ -211,10 +214,13 @@
                     </tableView>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
+                    <connections>
+                        <segue destination="zl8-Xc-PoL" kind="push" identifier="DeploymentDetailViewController" id="oez-Y9-Rti"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F4h-Hd-RuI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2097" y="-318"/>
+            <point key="canvasLocation" x="2112" y="-328"/>
         </scene>
         <!--Systems View Controller-->
         <scene sceneID="5uc-im-7OZ">
@@ -241,10 +247,13 @@
                     </tableView>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
+                    <connections>
+                        <segue destination="R4C-kw-dt2" kind="push" identifier="SystemDetailViewController" id="jHG-gH-xNq"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4tE-M2-UMj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2081" y="426"/>
+            <point key="canvasLocation" x="2112" y="436"/>
         </scene>
         <!--Projects View Controller-->
         <scene sceneID="uPF-mc-IMm">
@@ -325,6 +334,99 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zA4-4r-4Rg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2566" y="-1146"/>
+        </scene>
+        <!--Logical Device Detail View Controller-->
+        <scene sceneID="QaA-ZX-nwc">
+            <objects>
+                <viewController storyboardIdentifier="LogicalDeviceDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Zib-cC-1KY" customClass="LogicalDeviceDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="l7H-Hj-xRY"/>
+                        <viewControllerLayoutGuide type="bottom" id="ifd-FJ-sos"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="azx-Yw-PPs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dM1-lQ-fQk">
+                                <rect key="frame" x="20" y="36" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="PnL-gk-ZiP"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                    <connections>
+                        <outlet property="nameTextField" destination="dM1-lQ-fQk" id="NjF-kf-QMA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nng-qy-1kn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2517" y="1158"/>
+        </scene>
+        <!--System Detail View Controller System Detail View Controller-->
+        <scene sceneID="4Aa-8e-MQC">
+            <objects>
+                <viewController storyboardIdentifier="SystemDetailViewControllerSystemDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="R4C-kw-dt2" customClass="SystemDetailViewControllerSystemDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Hy6-d2-8ko"/>
+                        <viewControllerLayoutGuide type="bottom" id="EdG-vs-cgl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="v09-DF-c4j">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2vL-IW-PgE">
+                                <rect key="frame" x="20" y="36" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="za3-4j-Gls"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                    <connections>
+                        <outlet property="nameTextField" destination="2vL-IW-PgE" id="w4e-3f-R3f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pMW-BO-zve" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2539" y="426"/>
+        </scene>
+        <!--Deployment Detail View Controller-->
+        <scene sceneID="vAr-v4-fbS">
+            <objects>
+                <viewController restorationIdentifier="DeploymentDetailViewController" storyboardIdentifier="DeploymentDetailViewController" id="zl8-Xc-PoL" customClass="DeploymentDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FH0-xT-U72"/>
+                        <viewControllerLayoutGuide type="bottom" id="Fec-g6-O6E"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NBG-ef-ut9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XOx-Sr-Lk0">
+                                <rect key="frame" x="20" y="36" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="afk-fx-lcU"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                    <connections>
+                        <outlet property="nameTextField" destination="XOx-Sr-Lk0" id="N6Y-76-Ibq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uyR-5n-1er" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2557" y="-318"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

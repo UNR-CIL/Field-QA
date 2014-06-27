@@ -13,7 +13,7 @@
 #import "ProjectsViewController.h"
 #import "DeploymentsViewController.h"
 #import "SystemsViewController.h"
-#import "LogicalComponentsViewController.h"
+#import "LogicalDevicesViewController.h"
 
 @interface CurrentComponentViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -165,7 +165,7 @@
             break;
         }
         case 3: {
-            LogicalComponentsViewController *logicalComponentsViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"LogicalComponentsViewController"];
+            LogicalDevicesViewController *logicalComponentsViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"LogicalComponentsViewController"];
             UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:logicalComponentsViewController];
             UIPopoverController *popoverController = [[UIPopoverController alloc] initWithContentViewController:navigationController];
             self.logicalComponentsPopoverController = popoverController;

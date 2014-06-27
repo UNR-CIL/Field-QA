@@ -1,26 +1,26 @@
 //
-//  SystemsViewController.m
+//  LogicalComponentsViewController.m
 //  Field QA
 //
 //  Created by John Jusayan on 6/23/14.
 //  Copyright (c) 2014 CSE UNR. All rights reserved.
 //
 
-#import "SystemsViewController.h"
+#import "LogicalDevicesViewController.h"
 
 #import "AppDelegate.h"
 #import "NSString+TNNormalize.h"
 #import "ProjectDetailViewController.h"
 #import "Project.h"
 
-@interface SystemsViewController () <NSFetchedResultsControllerDelegate>
+@interface LogicalDevicesViewController () <NSFetchedResultsControllerDelegate>
 
 @property (nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic) NSFetchedResultsController *fetchedResultsController;
 
 @end
 
-@implementation SystemsViewController
+@implementation LogicalDevicesViewController
 
 - (void)awakeFromNib
 {

@@ -1,5 +1,5 @@
 //
-//  LogicalComponentsViewController.h
+//  LogicalDevicesViewController.h
 //  Field QA
 //
 //  Created by John Jusayan on 6/23/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LogicalComponentsViewController : UITableViewController
+@interface LogicalDevicesViewController : UITableViewController
 
 @end
