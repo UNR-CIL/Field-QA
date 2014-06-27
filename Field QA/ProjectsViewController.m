@@ -41,6 +41,8 @@
     
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewItem:)];
     self.navigationItem.rightBarButtonItem = addButton;
+    
+    self.navigationItem.leftBarButtonItem = [self editButtonItem];
 }
 
 - (void)addNewItem:(id)sender
@@ -117,8 +119,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *detailSegue = @"ProjectDetailViewController";
-    [self performSegueWithIdentifier:detailSegue sender:indexPath];
+    if (self.editing == NO) {
+        Project *detailItem = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        NSLog(@"Editing: Selected %@", detailItem);
+    }
+    else {
+        NSString *detailSegue = @"ProjectDetailViewController";
+        [self performSegueWithIdentifier:detailSegue sender:indexPath];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
