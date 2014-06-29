@@ -11,6 +11,6 @@
 
 @interface ProjectsViewController : UITableViewController
 
-@property (nonatomic) id <FQAItemSelection> delegate;
+@property (nonatomic, weak) id <FQAItemSelection> delegate;
 
 @end
