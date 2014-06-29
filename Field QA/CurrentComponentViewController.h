@@ -10,8 +10,16 @@
 
 @class Component;
 
-@interface CurrentComponentViewController : UIViewController 
+@protocol FQAItemSelection <NSObject>
+
+- (void)didSelectItem:(id)item fromViewController:(UIViewController*)viewController;
+
+@end
+
+@interface CurrentComponentViewController : UIViewController  <FQAItemSelection>
 
 @property (nonatomic) Component *detailComponent;
 
 @end
+
+

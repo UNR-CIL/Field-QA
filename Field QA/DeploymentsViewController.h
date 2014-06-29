@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CurrentComponentViewController.h"
 
 @interface DeploymentsViewController : UITableViewController
+
+@property (nonatomic) id <FQAItemSelection> delegate;
 
 @end

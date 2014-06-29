@@ -10,8 +10,8 @@
 
 #import "AppDelegate.h"
 #import "NSString+TNNormalize.h"
-#import "ProjectDetailViewController.h"
-#import "Project.h"
+#import "SystemDetailViewController.h"
+#import "System.h"
 
 @interface SystemsViewController () <NSFetchedResultsControllerDelegate>
 
@@ -42,13 +42,15 @@
     
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewItem:)];
     self.navigationItem.rightBarButtonItem = addButton;
+    
+    self.navigationItem.leftBarButtonItem = [self editButtonItem];
 }
 
 - (void)addNewItem:(id)sender
 {
     
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:@"Project" inManagedObjectContext:context];
+    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:@"System" inManagedObjectContext:context];
     
     
     // Save the context.
@@ -118,17 +120,27 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *detailSegue = @"ProjectDetailViewController";
-    [self performSegueWithIdentifier:detailSegue sender:indexPath];
+    if (self.editing == NO) {
+        System *detailItem = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        NSLog(@"Editing: Selected %@", detailItem);
+        if (self.delegate && [self.delegate respondsToSelector:@selector(didSelectItem:fromViewController:)]) {
+            [self.delegate didSelectItem:detailItem fromViewController:self];
+        }
+    }
+    else {
+        NSString *detailSegue = @"SystemDetailViewController";
+        [self performSegueWithIdentifier:detailSegue sender:indexPath];
+    }
+    
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSString *detailSegue = @"ProjectDetailViewController";
+    NSString *detailSegue = @"SystemDetailViewController";
     if ([[segue identifier] isEqualToString:detailSegue]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        Project *detailItem = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        [[segue destinationViewController] setDetailProject:detailItem];
+        System *detailItem = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        [[segue destinationViewController] setDetailSystem:detailItem];
     }
 }
 
@@ -142,7 +154,7 @@
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     // Edit the entity name as appropriate.
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Project" inManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"System" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
     
     // Set the batch size to a suitable number.
@@ -233,12 +245,12 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    Project *project = (Project*)[self.fetchedResultsController objectAtIndexPath:indexPath];
-    if ([project.name tn_cleanString]) {
-        cell.textLabel.text = project.name.tn_cleanString;
+    System *system = (System*)[self.fetchedResultsController objectAtIndexPath:indexPath];
+    if ([system.name tn_cleanString]) {
+        cell.textLabel.text = system.name.tn_cleanString;
     }
     else {
-        cell.textLabel.text = @"A Project";
+        cell.textLabel.text = @"A System";
     }
 }
 

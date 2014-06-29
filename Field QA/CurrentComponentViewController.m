@@ -11,9 +11,13 @@
 #import "ServiceEntry.h"
 
 #import "ProjectsViewController.h"
+#import "Project.h"
 #import "DeploymentsViewController.h"
+#import "Deployment.h"
 #import "SystemsViewController.h"
+#import "System.h"
 #import "LogicalDevicesViewController.h"
+#import "LogicalDevice.h"
 
 @interface CurrentComponentViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -144,6 +148,7 @@
             UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:projectsViewController];
             UIPopoverController *popoverController = [[UIPopoverController alloc] initWithContentViewController:navigationController];
             self.projectsPopoverController = popoverController;
+            projectsViewController.delegate = self;
             [self.projectsPopoverController presentPopoverFromRect:cell.bounds inView:cell permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
             
             break;
@@ -153,6 +158,7 @@
             UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:deploymentsViewController];
             UIPopoverController *popoverController = [[UIPopoverController alloc] initWithContentViewController:navigationController];
             self.deploymentsPopoverController = popoverController;
+            deploymentsViewController.delegate = self;
             [self.deploymentsPopoverController presentPopoverFromRect:cell.bounds inView:cell permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
             break;
         }
@@ -161,6 +167,7 @@
             UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:systemsViewController];
             UIPopoverController *popoverController = [[UIPopoverController alloc] initWithContentViewController:navigationController];
             self.systemsPopoverController = popoverController;
+            systemsViewController.delegate = self;
             [self.systemsPopoverController presentPopoverFromRect:cell.bounds inView:cell permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
             break;
         }
@@ -169,6 +176,7 @@
             UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:logicalComponentsViewController];
             UIPopoverController *popoverController = [[UIPopoverController alloc] initWithContentViewController:navigationController];
             self.logicalComponentsPopoverController = popoverController;
+            logicalComponentsViewController.delegate = self;
             [self.logicalComponentsPopoverController presentPopoverFromRect:cell.bounds inView:cell permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
             break;
         }
@@ -243,6 +251,26 @@
     // Called when the view is shown again in the split view, invalidating the button and popover controller.
     [self.navigationItem setLeftBarButtonItem:nil animated:YES];
     self.masterPopoverController = nil;
+}
+
+#pragma mark - FQAItemSelection
+
+- (void)didSelectItem:(id)item fromViewController:(UIViewController *)viewController
+{
+    if ([item isKindOfClass:[Project class]]) {
+        [self.projectsPopoverController dismissPopoverAnimated:YES];
+        
+    }
+    else if ([item isKindOfClass:[Deployment class]]) {
+        [self.deploymentsPopoverController dismissPopoverAnimated:YES];
+    }
+    else if ([item isKindOfClass:[System class]]) {
+        [self.systemsPopoverController dismissPopoverAnimated:YES];
+    }
+    else if ([item isKindOfClass:[LogicalDevice class]]) {
+        [self.logicalComponentsPopoverController dismissPopoverAnimated:YES];
+    }
+
 }
 
 
