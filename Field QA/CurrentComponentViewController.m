@@ -29,6 +29,11 @@
 @property (nonatomic) UIPopoverController *systemsPopoverController;
 @property (nonatomic) UIPopoverController *logicalComponentsPopoverController;
 
+@property (nonatomic) Project *currentProject;
+@property (nonatomic) Deployment *currentDeployment;
+@property (nonatomic) System *currentSystem;
+@property (nonatomic) LogicalDevice *currentLogicalDevice;
+
 - (void)configureView;
 
 @end
@@ -271,6 +276,54 @@
         [self.logicalComponentsPopoverController dismissPopoverAnimated:YES];
     }
 
+}
+
+- (void)setCurrentProject:(Project *)currentProject
+{
+    _currentProject = currentProject;
+    
+    
+    if (self.detailComponent.logicalDevice && self.detailComponent.logicalDevice == self.currentLogicalDevice &&
+        self.detailComponent.logicalDevice.system && self.detailComponent.logicalDevice.system == self.currentSystem &&
+        self.detailComponent.logicalDevice.system.deployment && self.detailComponent.logicalDevice.system.deployment == self.currentDeployment) {
+        
+        self.detailComponent.logicalDevice.system.deployment.project = _currentProject;
+    }
+    else {
+        NSLog(@"Current project cannot be set because of incomplete or inconsistent hierarchy");
+    }
+}
+
+- (void)setCurrentDeployment:(Deployment *)currentDeployment
+{
+    _currentDeployment = currentDeployment;
+    
+    if (self.detailComponent.logicalDevice && self.detailComponent.logicalDevice == self.currentLogicalDevice &&
+        self.detailComponent.logicalDevice.system && self.detailComponent.logicalDevice.system == self.currentSystem) {
+        self.detailComponent.logicalDevice.system.deployment = _currentDeployment;
+    }
+    else {
+        NSLog(@"Current project cannot be set because of incomplete or inconsistent hierarchy");
+    }
+}
+
+- (void)setCurrentSystem:(System *)currentSystem
+{
+    _currentSystem = currentSystem;
+    
+    if (self.detailComponent.logicalDevice && self.detailComponent.logicalDevice == self.currentLogicalDevice) {
+        self.detailComponent.logicalDevice.system = _currentSystem;
+    }
+    else {
+        NSLog(@"Current project cannot be set because of incomplete or inconsistent hierarchy");
+    }
+}
+
+- (void)setCurrentLogicalDevice:(LogicalDevice *)currentLogicalDevice
+{
+    _currentLogicalDevice = currentLogicalDevice;
+    
+    self.detailComponent.logicalDevice = _currentLogicalDevice;
 }
 
 
