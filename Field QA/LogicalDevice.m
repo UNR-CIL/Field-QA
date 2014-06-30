@@ -13,6 +13,7 @@
 
 @implementation LogicalDevice
 
+@dynamic uniqueIdentifier;
 @dynamic creationDate;
 @dynamic name;
 @dynamic notes;

@@ -13,6 +13,10 @@
 
 @interface Deployment : NSManagedObject
 
+/**Unique identifier
+ */
+@property (nonatomic, retain) NSString * uniqueIdentifier;
+
 @property (nonatomic, retain) NSDate * creationDate;
 @property (nonatomic, retain) NSNumber * latitude;
 @property (nonatomic, retain) NSNumber * longitude;

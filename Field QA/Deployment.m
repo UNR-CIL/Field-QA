@@ -15,6 +15,7 @@
 
 @implementation Deployment
 
+@dynamic uniqueIdentifier;
 @dynamic creationDate;
 @dynamic latitude;
 @dynamic longitude;

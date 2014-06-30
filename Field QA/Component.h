@@ -13,6 +13,10 @@
 
 @interface Component : NSManagedObject
 
+/**Unique identifier
+ */
+@property (nonatomic, retain) NSString * uniqueIdentifier;
+
 @property (nonatomic, retain) NSNumber * active;
 @property (nonatomic, retain) NSDate * creationDate;
 @property (nonatomic, retain) NSNumber * height;
@@ -22,7 +26,6 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * notes;
 @property (nonatomic, retain) NSString * serialNumber;
-@property (nonatomic, retain) NSString * uniqueIdentifier;
 @property (nonatomic, retain) Person *creator;
 @property (nonatomic, retain) LogicalDevice *currentLogicalDevice;
 @property (nonatomic, retain) LogicalDevice *logicalDevice;

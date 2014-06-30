@@ -13,6 +13,11 @@
 
 @interface Person : NSManagedObject
 
+
+/**Unique identifier
+ */
+@property (nonatomic, retain) NSString * uniqueIdentifier;
+
 /**Contact email
  */
 @property (nonatomic, retain) NSNumber * email;

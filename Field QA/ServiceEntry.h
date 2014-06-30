@@ -13,6 +13,10 @@
 
 @interface ServiceEntry : NSManagedObject
 
+/**Unique identifier
+ */
+@property (nonatomic, retain) NSString * uniqueIdentifier;
+
 /**Category type description
  */
 @property (nonatomic, retain) NSString * category;

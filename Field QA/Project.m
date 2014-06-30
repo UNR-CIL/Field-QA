@@ -13,6 +13,7 @@
 
 @implementation Project
 
+@dynamic uniqueIdentifier;
 @dynamic creationDate;
 @dynamic name;
 @dynamic notes;

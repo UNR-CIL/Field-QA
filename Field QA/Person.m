@@ -16,6 +16,7 @@
 
 @implementation Person
 
+@dynamic uniqueIdentifier;
 @dynamic email;
 @dynamic firstName;
 @dynamic lastName;

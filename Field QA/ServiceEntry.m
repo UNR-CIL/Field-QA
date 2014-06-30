@@ -15,6 +15,7 @@
 
 @implementation ServiceEntry
 
+@dynamic uniqueIdentifier;
 @dynamic category;
 @dynamic creationDate;
 @dynamic modificationDate;

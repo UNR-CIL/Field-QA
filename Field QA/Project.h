@@ -13,6 +13,10 @@
 
 @interface Project : NSManagedObject
 
+/**Unique identifier
+ */
+@property (nonatomic, retain) NSString * uniqueIdentifier;
+
 @property (nonatomic, retain) NSDate * creationDate;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * notes;
