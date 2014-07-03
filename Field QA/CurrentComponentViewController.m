@@ -18,6 +18,7 @@
 #import "System.h"
 #import "LogicalDevicesViewController.h"
 #import "LogicalDevice.h"
+#import "NSString+TNNormalize.h"
 
 @interface CurrentComponentViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -71,7 +72,6 @@
 - (IBAction)addServiceEntry:(id)sender
 {
 #warning Fix this
-    NSLog(@">>> %@", NSStringFromSelector(_cmd));
 }
 
 - (void)didReceiveMemoryWarning
@@ -85,14 +85,24 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    if (self.currentProject == nil && self.currentDeployment == nil && self.currentSystem == nil && self.currentLogicalDevice == nil) {
+        return 1;
+    }
+    else  if (self.currentDeployment == nil && self.currentSystem == nil && self.currentLogicalDevice == nil) {
+        return 2;
+    }
+    else  if (self.currentSystem == nil && self.currentLogicalDevice == nil) {
+        return 3;
+    }
+    else {
+        return 4;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    NSLog(@"indexPath %@", indexPath);
     
     [self configureTableViewCell:cell atIndexPath:indexPath];
     
@@ -140,8 +150,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@">>> indexPath %i", indexPath.row);
-    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
@@ -202,17 +210,43 @@
 
 - (void)configureTableViewCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
+    [cell.textLabel setTextColor:[UIColor darkTextColor]];
+
     if (indexPath.row == 0) {
-        [cell.textLabel setText:@"Project"];
+        if (self.currentProject) {
+            cell.textLabel.text = [self.currentProject.name tn_cleanString] ?: @"A Project";
+        }
+        else {
+            [cell.textLabel setTextColor:FQAMainTintColor];
+            [cell.textLabel setText:@"Select Project"];
+        }
     }
     else if (indexPath.row == 1) {
-        [cell.textLabel setText:@"Deployment"];
+        if (self.currentDeployment) {
+            cell.textLabel.text = [self.currentDeployment.name tn_cleanString] ?: @"A Deployment";
+        }
+        else {
+            [cell.textLabel setTextColor:FQAMainTintColor];
+            [cell.textLabel setText:@"Select Deployment"];
+        }
     }
     else if (indexPath.row == 2) {
-        [cell.textLabel setText:@"System"];
+        if (self.currentSystem) {
+            cell.textLabel.text = [self.currentSystem.name tn_cleanString] ?: @"A System";
+        }
+        else {
+            [cell.textLabel setTextColor:FQAMainTintColor];
+            [cell.textLabel setText:@"Select System"];
+        }
     }
     else if (indexPath.row == 3) {
-        [cell.textLabel setText:@"Logical Component"];
+        if (self.currentLogicalDevice) {
+            cell.textLabel.text = [self.currentLogicalDevice.name tn_cleanString] ?: @"A Logical Device";
+        }
+        else {
+            [cell.textLabel setTextColor:FQAMainTintColor];
+            [cell.textLabel setText:@"Select Logical Component"];
+        }
     }
 
 }
@@ -264,18 +298,34 @@
 {
     if ([item isKindOfClass:[Project class]]) {
         [self.projectsPopoverController dismissPopoverAnimated:YES];
-        
+        self.currentProject = item;
     }
     else if ([item isKindOfClass:[Deployment class]]) {
         [self.deploymentsPopoverController dismissPopoverAnimated:YES];
+        self.currentDeployment = item;
     }
     else if ([item isKindOfClass:[System class]]) {
         [self.systemsPopoverController dismissPopoverAnimated:YES];
+        self.currentSystem = item;
     }
     else if ([item isKindOfClass:[LogicalDevice class]]) {
         [self.logicalComponentsPopoverController dismissPopoverAnimated:YES];
+        self.currentLogicalDevice = item;
     }
+    
+    [self.tableView reloadData];
+}
 
+- (BOOL)validLogicalDevice
+{
+    if (self.currentLogicalDevice && self.currentSystem && self.currentDeployment && self.currentProject) {
+        if (self.currentLogicalDevice.system == self.currentSystem &&
+            self.currentLogicalDevice.system.deployment == self.currentDeployment &&
+            self.currentLogicalDevice.system.deployment.project == self.currentProject) {
+            return YES;
+        }
+    }
+    return NO;
 }
 
 - (void)setCurrentProject:(Project *)currentProject

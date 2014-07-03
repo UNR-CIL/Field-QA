@@ -19,6 +19,7 @@
 @interface CurrentComponentViewController : UIViewController  <FQAItemSelection>
 
 @property (nonatomic) Component *detailComponent;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 

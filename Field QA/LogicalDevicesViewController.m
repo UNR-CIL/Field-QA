@@ -122,7 +122,6 @@
 {
     if (self.editing == NO) {
         LogicalDevice *detailItem = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        NSLog(@"Editing: Selected %@", detailItem);
         if (self.delegate && [self.delegate respondsToSelector:@selector(didSelectItem:fromViewController:)]) {
             [self.delegate didSelectItem:detailItem fromViewController:self];
         }

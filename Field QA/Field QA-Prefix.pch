@@ -16,3 +16,6 @@
     #import <CoreData/CoreData.h>
     #import "AppDelegate.h"
 #endif
+
+
+#define FQAMainTintColor ([UIColor colorWithRed:0.190 green:0.711 blue:0.132 alpha:1.000])
