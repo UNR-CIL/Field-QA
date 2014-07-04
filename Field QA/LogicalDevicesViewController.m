@@ -48,20 +48,8 @@
 
 - (void)addNewItem:(id)sender
 {
-    
-    NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:@"LogicalDevice" inManagedObjectContext:context];
-    
-    
-    // Save the context.
-    NSError *error = nil;
-    if (![context save:&error]) {
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
-    
+    NSString *detailSegue = NSStringFromClass([LogicalDeviceDetailViewController class]);
+    [self performSegueWithIdentifier:detailSegue sender:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -139,6 +127,7 @@
     if ([[segue identifier] isEqualToString:detailSegue]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         LogicalDevice *detailItem = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        [[segue destinationViewController] setManagedObjectContext:self.managedObjectContext];
         [[segue destinationViewController] setDetailLogicalDevice:detailItem];
     }
 }

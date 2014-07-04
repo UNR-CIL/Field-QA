@@ -145,7 +145,7 @@
         <scene sceneID="j5l-sS-jGW">
             <objects>
                 <tableViewController restorationIdentifier="LogicalComponentsViewController" storyboardIdentifier="LogicalComponentsViewController" id="DRo-oc-EWp" customClass="LogicalDevicesViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fJk-DP-eBt">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fJk-DP-eBt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -196,7 +196,7 @@
         <scene sceneID="iBY-IN-SWr">
             <objects>
                 <tableViewController restorationIdentifier="DeploymentsViewController" storyboardIdentifier="DeploymentsViewController" id="Fh1-IS-70U" customClass="DeploymentsViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="hsz-aA-LhL">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="hsz-aA-LhL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -229,7 +229,7 @@
         <scene sceneID="5uc-im-7OZ">
             <objects>
                 <tableViewController restorationIdentifier="SystemsViewController" storyboardIdentifier="SystemsViewController" id="clp-iq-LZ2" customClass="SystemsViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="amW-Oh-8fZ">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="amW-Oh-8fZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -262,7 +262,7 @@
         <scene sceneID="uPF-mc-IMm">
             <objects>
                 <tableViewController restorationIdentifier="ProjectsViewController" storyboardIdentifier="ProjectsViewController" id="wSi-sR-r40" customClass="ProjectsViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ryU-Mu-LW4">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ryU-Mu-LW4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -369,10 +369,10 @@
             </objects>
             <point key="canvasLocation" x="2517" y="1158"/>
         </scene>
-        <!--System Detail View Controller System Detail View Controller-->
+        <!--System Detail View Controller-->
         <scene sceneID="4Aa-8e-MQC">
             <objects>
-                <viewController storyboardIdentifier="SystemDetailViewControllerSystemDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="R4C-kw-dt2" customClass="SystemDetailViewControllerSystemDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SystemDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="R4C-kw-dt2" customClass="SystemDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hy6-d2-8ko"/>
                         <viewControllerLayoutGuide type="bottom" id="EdG-vs-cgl"/>

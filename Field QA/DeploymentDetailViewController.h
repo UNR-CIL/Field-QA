@@ -12,6 +12,7 @@
 
 @interface DeploymentDetailViewController : UIViewController
 
+@property (nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic) Deployment *detailDeployment;
 
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;

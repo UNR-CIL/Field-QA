@@ -12,6 +12,7 @@
 
 @interface LogicalDeviceDetailViewController : UIViewController
 
+@property (nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic) LogicalDevice *detailLogicalDevice;
 
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;

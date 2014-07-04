@@ -13,6 +13,7 @@
 @interface ProjectDetailViewController : UIViewController
 
 @property (nonatomic) Project *detailProject;
+@property (nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 

@@ -7,6 +7,8 @@
 //
 
 #import "DeploymentDetailViewController.h"
+#import "Deployment.h"
+#import "NSString+TNNormalize.h"
 
 @interface DeploymentDetailViewController ()
 
@@ -14,19 +16,41 @@
 
 @implementation DeploymentDetailViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    
+    if (self.detailDeployment == nil) {
+        self.detailDeployment = [NSEntityDescription insertNewObjectForEntityForName:@"Deployment" inManagedObjectContext:self.managedObjectContext];
+    }
+    [self updateTextFields];
+    
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel:)];
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done:)];
+    self.navigationItem.leftBarButtonItem = cancelButton;
+    self.navigationItem.rightBarButtonItem = doneButton;
+}
+
+- (void)updateTextFields
+{
+    self.nameTextField.text = self.detailDeployment.name;
+}
+
+- (void)readFromTextFields
+{
+    self.detailDeployment.name = [self.nameTextField.text tn_cleanString];
+}
+
+- (void)cancel:(id)sender
+{
+    
+}
+
+- (void)done:(id)sender
+{
+    [self readFromTextFields];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning

@@ -12,6 +12,7 @@
 
 @interface SystemDetailViewController : UIViewController
 
+@property (nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic) System *detailSystem;
 
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;

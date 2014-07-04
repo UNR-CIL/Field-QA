@@ -7,6 +7,8 @@
 //
 
 #import "SystemDetailViewController.h"
+#import "System.h"
+#import "NSString+TNNormalize.h"
 
 @interface SystemDetailViewController ()
 
@@ -14,19 +16,42 @@
 
 @implementation SystemDetailViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    
+    if (self.detailSystem == nil) {
+        self.detailSystem = [NSEntityDescription insertNewObjectForEntityForName:@"System" inManagedObjectContext:self.managedObjectContext];
+    }
+    [self updateTextFields];
+    
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel:)];
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done:)];
+    self.navigationItem.leftBarButtonItem = cancelButton;
+    self.navigationItem.rightBarButtonItem = doneButton;
+}
+
+- (void)updateTextFields
+{
+    self.nameTextField.text = self.detailSystem.name;
+}
+
+- (void)readFromTextFields
+{
+    self.detailSystem.name = [self.nameTextField.text tn_cleanString];
+}
+
+- (void)cancel:(id)sender
+{
+    
+}
+
+- (void)done:(id)sender
+{
+    [self readFromTextFields];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning
