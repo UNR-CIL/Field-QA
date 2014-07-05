@@ -16,7 +16,7 @@
 
 @end
 
-@interface CurrentComponentViewController : UIViewController  <FQAItemSelection>
+@interface CurrentComponentViewController : UIViewController  <FQAItemSelection, UISplitViewControllerDelegate>
 
 @property (nonatomic) Component *detailComponent;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

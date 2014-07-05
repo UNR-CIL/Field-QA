@@ -35,6 +35,9 @@
 @property (nonatomic) System *currentSystem;
 @property (nonatomic) LogicalDevice *currentLogicalDevice;
 
+@property (weak, nonatomic) IBOutlet UIView *containerView;
+@property (weak, nonatomic) IBOutlet UILabel *selectionLabel;
+
 - (void)configureView;
 
 @end
@@ -51,10 +54,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-
-    
-
     
     self.title = @"Component Detail";
     [self configureView];
@@ -272,6 +271,12 @@
     // Update the user interface for the detail item.
     
     if (self.detailComponent) {
+        self.containerView.hidden = NO;
+        self.selectionLabel.hidden = YES;
+    }
+    else {
+        self.containerView.hidden = YES;
+        self.selectionLabel.hidden = NO;
     }
 }
 
@@ -290,6 +295,11 @@
     // Called when the view is shown again in the split view, invalidating the button and popover controller.
     [self.navigationItem setLeftBarButtonItem:nil animated:YES];
     self.masterPopoverController = nil;
+}
+
+- (BOOL)splitViewController:(UISplitViewController *)svc shouldHideViewController:(UIViewController *)vc inOrientation:(UIInterfaceOrientation)orientation
+{
+    return NO;
 }
 
 #pragma mark - FQAItemSelection
