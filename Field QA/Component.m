@@ -14,7 +14,7 @@
 
 @implementation Component
 
-@dynamic active;
+@dynamic deactivationDate;
 @dynamic creationDate;
 @dynamic height;
 @dynamic installationDate;

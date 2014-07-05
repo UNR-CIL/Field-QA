@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13D65" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13E28" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Component" representedClassName="Component" syncable="YES">
-        <attribute name="active" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="creationDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="deactivationDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="height" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="installationDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="locationNotes" optional="YES" attributeType="String" syncable="YES"/>
@@ -88,7 +88,7 @@
         <relationship name="serviceEntries" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ServiceEntry" inverseName="systems" inverseEntity="ServiceEntry" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Component" positionX="693" positionY="306" width="128" height="253"/>
+        <element name="Component" positionX="693" positionY="306" width="128" height="255"/>
         <element name="Deployment" positionX="61" positionY="261" width="128" height="208"/>
         <element name="LogicalDevice" positionX="457" positionY="198" width="128" height="148"/>
         <element name="Person" positionX="43" positionY="-90" width="128" height="223"/>
