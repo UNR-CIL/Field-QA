@@ -267,9 +267,7 @@
 }
 
 - (void)configureView
-{
-    // Update the user interface for the detail item.
-    
+{    
     if (self.detailComponent) {
         self.containerView.hidden = NO;
         self.selectionLabel.hidden = YES;
@@ -278,6 +276,7 @@
         self.containerView.hidden = YES;
         self.selectionLabel.hidden = NO;
     }
+    [self.tableView reloadData];
 }
 
 
