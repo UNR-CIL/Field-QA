@@ -10,7 +10,7 @@
 
 @class LogicalDevice;
 
-@interface LogicalDeviceDetailViewController : UIViewController
+@interface LogicalDeviceDetailViewController : UITableViewController
 
 @property (nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic) LogicalDevice *detailLogicalDevice;

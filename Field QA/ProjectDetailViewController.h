@@ -10,7 +10,7 @@
 
 @class Project;
 
-@interface ProjectDetailViewController : UIViewController
+@interface ProjectDetailViewController : UITableViewController
 
 @property (nonatomic) Project *detailProject;
 @property (nonatomic) NSManagedObjectContext *managedObjectContext;

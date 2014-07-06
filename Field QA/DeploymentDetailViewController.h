@@ -10,7 +10,7 @@
 
 @class Deployment;
 
-@interface DeploymentDetailViewController : UIViewController
+@interface DeploymentDetailViewController : UITableViewController
 
 @property (nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic) Deployment *detailDeployment;

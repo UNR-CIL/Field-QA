@@ -10,7 +10,7 @@
 
 @class System;
 
-@interface SystemDetailViewController : UIViewController
+@interface SystemDetailViewController : UITableViewController
 
 @property (nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic) System *detailSystem;
