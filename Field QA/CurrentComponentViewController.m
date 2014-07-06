@@ -5,6 +5,17 @@
 //  Created by John Jusayan on 4/16/14.
 //  Copyright (c) 2014 CSE UNR. All rights reserved.
 //
+/*
+ name
+ serialNumber
+ model
+ notes
+ 
+ deactivationDate
+ creationDate
+ installationDate
+ height
+ */
 
 #import "CurrentComponentViewController.h"
 #import "Component.h"

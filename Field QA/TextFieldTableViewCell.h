@@ -13,10 +13,4 @@
 @property (weak, nonatomic) IBOutlet UILabel *propertyNameLabel;
 @property (weak, nonatomic) IBOutlet UITextField *propertyTextField;
 
-@property (strong, nonatomic) NSString *associatedPropertyName;
-
-@property (weak, nonatomic) NSManagedObject *detailItem;
-
-- (void)saveProperty;
-
 @end

@@ -6,11 +6,18 @@
 //  Copyright (c) 2014 CSE UNR. All rights reserved.
 //
 
+
 #import "ProjectDetailViewController.h"
 #import "NSString+TNNormalize.h"
 #import "Project.h"
+#import "TextFieldTableViewCell.h"
 
 @interface ProjectDetailViewController ()
+
+@property (nonatomic, assign) BOOL displayingDatePicker;
+
+@property (nonatomic) NSArray *propertyNames;
+@property (nonatomic) NSArray *displayNames;
 
 @end
 
@@ -31,6 +38,12 @@
     UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done:)];
     self.navigationItem.leftBarButtonItem = cancelButton;
     self.navigationItem.rightBarButtonItem = doneButton;
+    
+    UINib *cellNib = [UINib nibWithNibName:@"TextFieldTableViewCell" bundle:nil];
+    [self.tableView registerNib:cellNib forCellReuseIdentifier:@"TextFieldTableViewCell"];
+    
+    self.propertyNames = @[@"name", @"notes", @"creationDate"];
+    self.displayNames = @[@"Name", @"Notes", @"Creation Date"];
 }
 
 - (void)updateTextFields
@@ -60,32 +73,42 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    if (self.displayingDatePicker) return self.propertyNames.count + 1;
+    
+    return self.propertyNames.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TextFieldTableViewCell" forIndexPath:indexPath];
+    [self configureCell:cell atIndexPath:indexPath];
     
     return cell;
 }
-*/
+
+- (void)configureCell:(UITableViewCell*)aCell atIndexPath:(NSIndexPath*)indexPath
+{
+    TextFieldTableViewCell *cell = (TextFieldTableViewCell*)aCell;
+    
+    if (self.displayingDatePicker) {
+
+    }
+    else {
+        cell.propertyNameLabel.text = self.displayNames[indexPath.row];
+        cell.propertyTextField.text = [self.detailProject valueForKey:self.propertyNames[indexPath.row]];
+    }
+}
 
 /*
 // Override to support conditional editing of the table view.

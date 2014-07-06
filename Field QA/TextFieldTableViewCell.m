@@ -31,10 +31,4 @@
     // Configure the view for the selected state
 }
 
-- (void)saveProperty
-{
-    [self.detailItem setValue:self.propertyTextField.text forKey:self.associatedPropertyName];
-}
-
-
 @end
