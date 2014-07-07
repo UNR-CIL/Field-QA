@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CurrentComponentViewController.h"
 
 @class LogicalDevice;
 

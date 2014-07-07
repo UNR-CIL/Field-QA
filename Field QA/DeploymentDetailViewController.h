@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CurrentComponentViewController.h"
 
 @class Deployment;
 
 @interface DeploymentDetailViewController : UITableViewController
 
+@property (nonatomic, weak) id <FQAItemSelection, FQACurrentItems> itemSelectionDelegate;
 @property (nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic) Deployment *detailDeployment;
 

@@ -11,6 +11,6 @@
 
 @interface SystemsViewController : UITableViewController
 
-@property (nonatomic, weak) id <FQAItemSelection> delegate;
+@property (nonatomic, weak) id <FQAItemSelection, FQACurrentItems> itemSelectionDelegate;
 
 @end

@@ -111,8 +111,8 @@
         Project *detailItem = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         NSLog(@"Editing: Selected %@", detailItem);
         
-        if (self.delegate && [self.delegate respondsToSelector:@selector(didSelectItem:fromViewController:)]) {
-            [self.delegate didSelectItem:detailItem fromViewController:self];
+        if (self.itemSelectionDelegate && [self.itemSelectionDelegate respondsToSelector:@selector(didSelectItem:fromViewController:)]) {
+            [self.itemSelectionDelegate didSelectItem:detailItem fromViewController:self];
         }
     }
     else {
@@ -129,6 +129,7 @@
         Project *detailItem = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         [[segue destinationViewController] setManagedObjectContext:self.managedObjectContext];
         [[segue destinationViewController] setDetailProject:detailItem];
+        [[segue destinationViewController] setItemSelectionDelegate:self.itemSelectionDelegate];
     }
 }
 

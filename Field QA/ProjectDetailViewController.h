@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+#import "CurrentComponentViewController.h"
+
 @class Project;
 
 @interface ProjectDetailViewController : UITableViewController
+
+@property (nonatomic, weak) id <FQAItemSelection, FQACurrentItems> itemSelectionDelegate;
 
 @property (nonatomic) Project *detailProject;
 @property (nonatomic) NSManagedObjectContext *managedObjectContext;

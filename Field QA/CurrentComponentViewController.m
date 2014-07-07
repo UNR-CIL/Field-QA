@@ -70,10 +70,6 @@
     [self configureView];
 }
 
-
-
-
-
 - (void)addContact:(id)sender;
 {
     
@@ -171,7 +167,7 @@
             UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:projectsViewController];
             UIPopoverController *popoverController = [[UIPopoverController alloc] initWithContentViewController:navigationController];
             self.projectsPopoverController = popoverController;
-            projectsViewController.delegate = self;
+            projectsViewController.itemSelectionDelegate = self;
             [self.projectsPopoverController presentPopoverFromRect:cell.bounds inView:cell permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
             
             break;
@@ -181,7 +177,7 @@
             UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:deploymentsViewController];
             UIPopoverController *popoverController = [[UIPopoverController alloc] initWithContentViewController:navigationController];
             self.deploymentsPopoverController = popoverController;
-            deploymentsViewController.delegate = self;
+            deploymentsViewController.itemSelectionDelegate = self;
             [self.deploymentsPopoverController presentPopoverFromRect:cell.bounds inView:cell permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
             break;
         }
@@ -190,7 +186,7 @@
             UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:systemsViewController];
             UIPopoverController *popoverController = [[UIPopoverController alloc] initWithContentViewController:navigationController];
             self.systemsPopoverController = popoverController;
-            systemsViewController.delegate = self;
+            systemsViewController.itemSelectionDelegate = self;
             [self.systemsPopoverController presentPopoverFromRect:cell.bounds inView:cell permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
             break;
         }
@@ -199,7 +195,7 @@
             UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:logicalComponentsViewController];
             UIPopoverController *popoverController = [[UIPopoverController alloc] initWithContentViewController:navigationController];
             self.logicalComponentsPopoverController = popoverController;
-            logicalComponentsViewController.delegate = self;
+            logicalComponentsViewController.itemSelectionDelegate = self;
             [self.logicalComponentsPopoverController presentPopoverFromRect:cell.bounds inView:cell permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
             break;
         }

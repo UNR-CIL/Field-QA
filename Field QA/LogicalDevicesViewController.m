@@ -110,8 +110,8 @@
 {
     if (self.editing == NO) {
         LogicalDevice *detailItem = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        if (self.delegate && [self.delegate respondsToSelector:@selector(didSelectItem:fromViewController:)]) {
-            [self.delegate didSelectItem:detailItem fromViewController:self];
+        if (self.itemSelectionDelegate && [self.itemSelectionDelegate respondsToSelector:@selector(didSelectItem:fromViewController:)]) {
+            [self.itemSelectionDelegate didSelectItem:detailItem fromViewController:self];
         }
     }
     else {
@@ -129,6 +129,7 @@
         LogicalDevice *detailItem = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         [[segue destinationViewController] setManagedObjectContext:self.managedObjectContext];
         [[segue destinationViewController] setDetailLogicalDevice:detailItem];
+        [[segue destinationViewController] setItemSelectionDelegate:self.itemSelectionDelegate];
     }
 }
 

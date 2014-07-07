@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CurrentComponentViewController.h"
 
 @class System;
 
 @interface SystemDetailViewController : UITableViewController
 
+@property (nonatomic, weak) id <FQAItemSelection, FQACurrentItems> itemSelectionDelegate;
 @property (nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic) System *detailSystem;
 
