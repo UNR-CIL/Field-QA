@@ -18,6 +18,7 @@
 
 @property (nonatomic) NSArray *propertyNames;
 @property (nonatomic) NSArray *displayNames;
+@property (nonatomic) NSArray *labelNames;
 
 @end
 
@@ -44,6 +45,7 @@
     
     self.propertyNames = @[@"name", @"notes", @"creationDate"];
     self.displayNames = @[@"Name", @"Notes", @"Creation Date"];
+    self.labelNames = @[@"nameLabel", @"notesLabel", @"creationDateLabel"];
 }
 
 - (void)updateTextFields
@@ -105,6 +107,18 @@
 
     }
     else {
+        switch (indexPath.row) {
+            case 0:
+                self.nameTextField = cell.propertyTextField;
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            default:
+                break;
+        }
+        
         cell.propertyNameLabel.text = self.displayNames[indexPath.row];
         cell.propertyTextField.text = [self.detailProject valueForKey:self.propertyNames[indexPath.row]];
     }

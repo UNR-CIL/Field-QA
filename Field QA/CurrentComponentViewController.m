@@ -251,7 +251,7 @@
         }
         else {
             [cell.textLabel setTextColor:FQAMainTintColor];
-            [cell.textLabel setText:@"Select Logical Component"];
+            [cell.textLabel setText:@"Select Logical Device"];
         }
     }
 

@@ -23,6 +23,7 @@
     
     if (self.detailDeployment == nil) {
         self.detailDeployment = [NSEntityDescription insertNewObjectForEntityForName:@"Deployment" inManagedObjectContext:self.managedObjectContext];
+        self.detailDeployment.project = self.itemSelectionDelegate.currentProject;
     }
     [self updateTextFields];
     

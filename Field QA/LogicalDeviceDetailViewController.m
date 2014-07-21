@@ -24,6 +24,7 @@
     
     if (self.detailLogicalDevice == nil) {
         self.detailLogicalDevice = [NSEntityDescription insertNewObjectForEntityForName:@"LogicalDevice" inManagedObjectContext:self.managedObjectContext];
+        self.detailLogicalDevice.system = self.itemSelectionDelegate.currentSystem;
     }
     [self updateTextFields];
     

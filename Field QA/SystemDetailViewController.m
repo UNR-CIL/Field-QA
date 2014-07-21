@@ -24,6 +24,7 @@
     
     if (self.detailSystem == nil) {
         self.detailSystem = [NSEntityDescription insertNewObjectForEntityForName:@"System" inManagedObjectContext:self.managedObjectContext];
+        self.detailSystem.deployment = self.itemSelectionDelegate.currentDeployment;
     }
     [self updateTextFields];
     

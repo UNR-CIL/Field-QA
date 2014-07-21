@@ -13,6 +13,7 @@
 
 @interface LogicalDeviceDetailViewController : UITableViewController
 
+@property (nonatomic, weak) id <FQAItemSelection, FQACurrentItems> itemSelectionDelegate;
 @property (nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic) LogicalDevice *detailLogicalDevice;
 
