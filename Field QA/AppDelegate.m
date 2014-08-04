@@ -7,8 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "ComponentsViewController.h"
-#import "CurrentComponentViewController.h"
+#import "MasterViewController.h"
+#import "DetailViewController.h"
 
 @implementation AppDelegate
 
@@ -26,11 +26,11 @@
         splitViewController.delegate = (id)navigationController.topViewController;
         
         UINavigationController *masterNavigationController = splitViewController.viewControllers[0];
-        ComponentsViewController *controller = (ComponentsViewController *)masterNavigationController.topViewController;
+        MasterViewController *controller = (MasterViewController *)masterNavigationController.topViewController;
         controller.managedObjectContext = self.managedObjectContext;
     } else {
         UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-        ComponentsViewController *controller = (ComponentsViewController *)navigationController.topViewController;
+        MasterViewController *controller = (MasterViewController *)navigationController.topViewController;
         controller.managedObjectContext = self.managedObjectContext;
     }
     

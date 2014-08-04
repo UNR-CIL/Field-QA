@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CurrentComponentViewController.h"
+#import "DetailViewController.h"
 
 @class Deployment;
 

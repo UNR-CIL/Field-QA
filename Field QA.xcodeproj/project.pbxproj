@@ -13,7 +13,7 @@
 		AB23179C1958ECA400918745 /* SystemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB23179B1958ECA400918745 /* SystemsViewController.m */; };
 		AB23179F1958ED0900918745 /* LogicalDevicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB23179E1958ED0900918745 /* LogicalDevicesViewController.m */; };
 		AB2317A1195A28D700918745 /* AppledocSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB2317A0195A28D700918745 /* AppledocSettings.plist */; };
-		AB3B6AB119217BB800E51C7B /* CurrentComponentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3B6AAF19217BB800E51C7B /* CurrentComponentViewController.m */; };
+		AB3B6AB119217BB800E51C7B /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3B6AAF19217BB800E51C7B /* DetailViewController.m */; };
 		AB3B861919105A8000040DD5 /* Component.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3B861819105A8000040DD5 /* Component.m */; };
 		AB3B861C19105A8000040DD5 /* Deployment.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3B861B19105A8000040DD5 /* Deployment.m */; };
 		AB3B861F19105A8000040DD5 /* LogicalDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3B861E19105A8000040DD5 /* LogicalDevice.m */; };
@@ -21,6 +21,8 @@
 		AB3B862519105A8000040DD5 /* System.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3B862419105A8000040DD5 /* System.m */; };
 		AB3B862819105A8000040DD5 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3B862719105A8000040DD5 /* Person.m */; };
 		AB3B862B19105A8000040DD5 /* ServiceEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3B862A19105A8000040DD5 /* ServiceEntry.m */; };
+		AB41434E198FF6E9006A8847 /* CurrentComponentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB41434B198FF6E9006A8847 /* CurrentComponentViewController.m */; };
+		AB41434F198FF6E9006A8847 /* ComponentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB41434C198FF6E9006A8847 /* ComponentsViewController.m */; };
 		AB4CFEB818F5D3470052F590 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4CFEB718F5D3470052F590 /* Foundation.framework */; };
 		AB4CFEBA18F5D3470052F590 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4CFEB918F5D3470052F590 /* CoreGraphics.framework */; };
 		AB4CFEBC18F5D3470052F590 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4CFEBB18F5D3470052F590 /* UIKit.framework */; };
@@ -38,7 +40,7 @@
 		AB4CFEE518F5D3470052F590 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4CFEBD18F5D3470052F590 /* CoreData.framework */; };
 		AB4CFEED18F5D3470052F590 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB4CFEEB18F5D3470052F590 /* InfoPlist.strings */; };
 		AB4CFEEF18F5D3470052F590 /* Field_QATests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4CFEEE18F5D3470052F590 /* Field_QATests.m */; };
-		AB8DDFFF18FF0E47005A1093 /* ComponentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8DDFFE18FF0E47005A1093 /* ComponentsViewController.m */; };
+		AB8DDFFF18FF0E47005A1093 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8DDFFE18FF0E47005A1093 /* MasterViewController.m */; };
 		AB964A96195DF67100E3F1FD /* DeploymentDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB964A95195DF67100E3F1FD /* DeploymentDetailViewController.m */; };
 		AB964A99195DF68100E3F1FD /* SystemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB964A98195DF68100E3F1FD /* SystemDetailViewController.m */; };
 		AB964A9C195DF69500E3F1FD /* LogicalDeviceDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB964A9B195DF69500E3F1FD /* LogicalDeviceDetailViewController.m */; };
@@ -70,8 +72,8 @@
 		AB23179D1958ED0900918745 /* LogicalDevicesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogicalDevicesViewController.h; sourceTree = "<group>"; };
 		AB23179E1958ED0900918745 /* LogicalDevicesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogicalDevicesViewController.m; sourceTree = "<group>"; };
 		AB2317A0195A28D700918745 /* AppledocSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AppledocSettings.plist; sourceTree = "<group>"; };
-		AB3B6AAF19217BB800E51C7B /* CurrentComponentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentComponentViewController.m; sourceTree = "<group>"; };
-		AB3B6AB019217BB800E51C7B /* CurrentComponentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentComponentViewController.h; sourceTree = "<group>"; };
+		AB3B6AAF19217BB800E51C7B /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		AB3B6AB019217BB800E51C7B /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		AB3B861719105A8000040DD5 /* Component.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Component.h; sourceTree = "<group>"; };
 		AB3B861819105A8000040DD5 /* Component.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Component.m; sourceTree = "<group>"; };
 		AB3B861A19105A8000040DD5 /* Deployment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deployment.h; sourceTree = "<group>"; };
@@ -86,6 +88,10 @@
 		AB3B862719105A8000040DD5 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		AB3B862919105A8000040DD5 /* ServiceEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceEntry.h; sourceTree = "<group>"; };
 		AB3B862A19105A8000040DD5 /* ServiceEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceEntry.m; sourceTree = "<group>"; };
+		AB41434A198FF6E9006A8847 /* CurrentComponentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentComponentViewController.h; sourceTree = "<group>"; };
+		AB41434B198FF6E9006A8847 /* CurrentComponentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentComponentViewController.m; sourceTree = "<group>"; };
+		AB41434C198FF6E9006A8847 /* ComponentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentsViewController.m; sourceTree = "<group>"; };
+		AB41434D198FF6E9006A8847 /* ComponentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentsViewController.h; sourceTree = "<group>"; };
 		AB4CFEB418F5D3470052F590 /* Field QA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Field QA.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB4CFEB718F5D3470052F590 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AB4CFEB918F5D3470052F590 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -106,8 +112,8 @@
 		AB4CFEEA18F5D3470052F590 /* Field QATests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Field QATests-Info.plist"; sourceTree = "<group>"; };
 		AB4CFEEC18F5D3470052F590 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AB4CFEEE18F5D3470052F590 /* Field_QATests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Field_QATests.m; sourceTree = "<group>"; };
-		AB8DDFFD18FF0E47005A1093 /* ComponentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentsViewController.h; sourceTree = "<group>"; };
-		AB8DDFFE18FF0E47005A1093 /* ComponentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentsViewController.m; sourceTree = "<group>"; };
+		AB8DDFFD18FF0E47005A1093 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		AB8DDFFE18FF0E47005A1093 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		AB964A94195DF67100E3F1FD /* DeploymentDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeploymentDetailViewController.h; sourceTree = "<group>"; };
 		AB964A95195DF67100E3F1FD /* DeploymentDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeploymentDetailViewController.m; sourceTree = "<group>"; };
 		AB964A97195DF68100E3F1FD /* SystemDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemDetailViewController.h; sourceTree = "<group>"; };
@@ -192,38 +198,42 @@
 			children = (
 				AB4CFEC818F5D3470052F590 /* AppDelegate.h */,
 				AB4CFEC918F5D3470052F590 /* AppDelegate.m */,
-				AB8DDFFD18FF0E47005A1093 /* ComponentsViewController.h */,
-				AB8DDFFE18FF0E47005A1093 /* ComponentsViewController.m */,
-				AB3B6AB019217BB800E51C7B /* CurrentComponentViewController.h */,
-				AB3B6AAF19217BB800E51C7B /* CurrentComponentViewController.m */,
-				AB2317941958E8BC00918745 /* ProjectsViewController.h */,
-				AB2317951958E8BC00918745 /* ProjectsViewController.m */,
-				ABF5C076195CCAB500F82F9B /* ProjectDetailViewController.h */,
-				ABF5C077195CCAB500F82F9B /* ProjectDetailViewController.m */,
-				AB2317971958EC9500918745 /* DeploymentsViewController.h */,
-				AB2317981958EC9500918745 /* DeploymentsViewController.m */,
+				AB41434D198FF6E9006A8847 /* ComponentsViewController.h */,
+				AB41434C198FF6E9006A8847 /* ComponentsViewController.m */,
+				AB41434A198FF6E9006A8847 /* CurrentComponentViewController.h */,
+				AB41434B198FF6E9006A8847 /* CurrentComponentViewController.m */,
 				AB964A94195DF67100E3F1FD /* DeploymentDetailViewController.h */,
 				AB964A95195DF67100E3F1FD /* DeploymentDetailViewController.m */,
-				AB23179A1958ECA400918745 /* SystemsViewController.h */,
-				AB23179B1958ECA400918745 /* SystemsViewController.m */,
-				AB964A97195DF68100E3F1FD /* SystemDetailViewController.h */,
-				AB964A98195DF68100E3F1FD /* SystemDetailViewController.m */,
-				AB23179D1958ED0900918745 /* LogicalDevicesViewController.h */,
-				AB23179E1958ED0900918745 /* LogicalDevicesViewController.m */,
-				AB964A9A195DF69500E3F1FD /* LogicalDeviceDetailViewController.h */,
-				AB964A9B195DF69500E3F1FD /* LogicalDeviceDetailViewController.m */,
+				AB2317971958EC9500918745 /* DeploymentsViewController.h */,
+				AB2317981958EC9500918745 /* DeploymentsViewController.m */,
+				AB3B6AB019217BB800E51C7B /* DetailViewController.h */,
+				AB3B6AAF19217BB800E51C7B /* DetailViewController.m */,
 				AB4CFEDA18F5D3470052F590 /* Images.xcassets */,
 				ABC6FB4E18FC60B4001E6420 /* ImageToDataTransformer.h */,
 				ABC6FB4F18FC60B4001E6420 /* ImageToDataTransformer.m */,
+				AB964A9A195DF69500E3F1FD /* LogicalDeviceDetailViewController.h */,
+				AB964A9B195DF69500E3F1FD /* LogicalDeviceDetailViewController.m */,
+				AB23179D1958ED0900918745 /* LogicalDevicesViewController.h */,
+				AB23179E1958ED0900918745 /* LogicalDevicesViewController.m */,
 				AB4CFECE18F5D3470052F590 /* Main_iPad.storyboard */,
 				AB4CFECB18F5D3470052F590 /* Main_iPhone.storyboard */,
+				AB8DDFFD18FF0E47005A1093 /* MasterViewController.h */,
+				AB8DDFFE18FF0E47005A1093 /* MasterViewController.m */,
 				AB701242190F0B1200A8E08C /* Model */,
+				ABABC67B194784FA003B37B7 /* NSString+TNNormalize.h */,
+				ABABC67C194784FA003B37B7 /* NSString+TNNormalize.m */,
+				ABF5C076195CCAB500F82F9B /* ProjectDetailViewController.h */,
+				ABF5C077195CCAB500F82F9B /* ProjectDetailViewController.m */,
+				AB2317941958E8BC00918745 /* ProjectsViewController.h */,
+				AB2317951958E8BC00918745 /* ProjectsViewController.m */,
 				AB4CFEC018F5D3470052F590 /* Supporting Files */,
+				AB964A97195DF68100E3F1FD /* SystemDetailViewController.h */,
+				AB964A98195DF68100E3F1FD /* SystemDetailViewController.m */,
+				AB23179A1958ECA400918745 /* SystemsViewController.h */,
+				AB23179B1958ECA400918745 /* SystemsViewController.m */,
 				ABC6FB5A18FC7A9F001E6420 /* TextFieldTableViewCell.h */,
 				ABC6FB5B18FC7A9F001E6420 /* TextFieldTableViewCell.m */,
 				ABC6FB5D18FC7ABD001E6420 /* TextFieldTableViewCell.xib */,
-				ABABC67B194784FA003B37B7 /* NSString+TNNormalize.h */,
-				ABABC67C194784FA003B37B7 /* NSString+TNNormalize.m */,
 			);
 			path = "Field QA";
 			sourceTree = "<group>";
@@ -426,6 +436,7 @@
 				AB4CFED318F5D3470052F590 /* Field_QA.xcdatamodeld in Sources */,
 				AB4CFECA18F5D3470052F590 /* AppDelegate.m in Sources */,
 				ABC6FB5018FC60B4001E6420 /* ImageToDataTransformer.m in Sources */,
+				AB41434F198FF6E9006A8847 /* ComponentsViewController.m in Sources */,
 				AB964A99195DF68100E3F1FD /* SystemDetailViewController.m in Sources */,
 				AB3B861F19105A8000040DD5 /* LogicalDevice.m in Sources */,
 				ABF5C078195CCAB500F82F9B /* ProjectDetailViewController.m in Sources */,
@@ -433,13 +444,14 @@
 				AB2317991958EC9500918745 /* DeploymentsViewController.m in Sources */,
 				AB964A96195DF67100E3F1FD /* DeploymentDetailViewController.m in Sources */,
 				AB3B862219105A8000040DD5 /* Project.m in Sources */,
+				AB41434E198FF6E9006A8847 /* CurrentComponentViewController.m in Sources */,
 				AB23179F1958ED0900918745 /* LogicalDevicesViewController.m in Sources */,
 				AB3B862819105A8000040DD5 /* Person.m in Sources */,
 				ABABC67D194784FA003B37B7 /* NSString+TNNormalize.m in Sources */,
 				AB2317961958E8BC00918745 /* ProjectsViewController.m in Sources */,
 				AB4CFEC618F5D3470052F590 /* main.m in Sources */,
-				AB8DDFFF18FF0E47005A1093 /* ComponentsViewController.m in Sources */,
-				AB3B6AB119217BB800E51C7B /* CurrentComponentViewController.m in Sources */,
+				AB8DDFFF18FF0E47005A1093 /* MasterViewController.m in Sources */,
+				AB3B6AB119217BB800E51C7B /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Components View Controller - Root View Controller-->
+        <!--Master View Controller - Root View Controller-->
         <scene sceneID="lwX-bR-cvv">
             <objects>
-                <tableViewController clearsSelectionOnViewWillAppear="NO" id="Kpn-7F-rEp" customClass="ComponentsViewController" sceneMemberID="viewController">
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="Kpn-7F-rEp" customClass="MasterViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="FOb-Bb-sVq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,10 +63,10 @@
             </objects>
             <point key="canvasLocation" x="-584" y="-2333"/>
         </scene>
-        <!--Current Component View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="H13-ag-202">
             <objects>
-                <viewController id="N7f-QY-FiK" customClass="CurrentComponentViewController" sceneMemberID="viewController">
+                <viewController id="N7f-QY-FiK" customClass="DetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mjG-nb-T7g"/>
                         <viewControllerLayoutGuide type="bottom" id="r6H-od-jeP"/>

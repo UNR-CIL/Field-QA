@@ -84,7 +84,7 @@
         <attribute name="uniqueIdentifier" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="creator" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="systems" inverseEntity="Person" syncable="YES"/>
         <relationship name="deployment" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deployment" inverseName="systems" inverseEntity="Deployment" syncable="YES"/>
-        <relationship name="logicalDevice" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LogicalDevice" inverseName="system" inverseEntity="LogicalDevice" syncable="YES"/>
+        <relationship name="logicalDevice" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LogicalDevice" inverseName="system" inverseEntity="LogicalDevice" syncable="YES"/>
         <relationship name="serviceEntries" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ServiceEntry" inverseName="systems" inverseEntity="ServiceEntry" syncable="YES"/>
     </entity>
     <elements>
